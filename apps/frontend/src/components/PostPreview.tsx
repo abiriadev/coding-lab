@@ -4,6 +4,7 @@ import {
 	ThumbUpOutlined,
 	ThumbDownOutlined,
 	ChatBubbleOutlineOutlined,
+	ShareOutlined,
 } from '@mui/icons-material'
 import { Button, Stack } from '@mui/material'
 
@@ -39,6 +40,10 @@ export const PostPreview = ({
 					}
 				>
 					56
+				</Button>
+
+				<Button startIcon={<ShareOutlined />}>
+					Share
 				</Button>
 			</Stack>
 		</article>
