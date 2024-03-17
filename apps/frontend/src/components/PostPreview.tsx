@@ -4,7 +4,7 @@ import {
 	ThumbUpOutlined,
 	ThumbDownOutlined,
 } from '@mui/icons-material'
-import { Button, ButtonGroup } from '@mui/material'
+import { Button, Stack } from '@mui/material'
 
 export interface PostPreviewProps {
 	title: string
@@ -21,15 +21,17 @@ export const PostPreview = ({
 				{title}
 			</h2>
 			<p>{content}</p>
-			<ButtonGroup>
-				<Button startIcon={<ThumbUpOutlined />}>
-					12
-				</Button>
+			<Stack direction="row" spacing={2}>
+				<div>
+					<Button startIcon={<ThumbUpOutlined />}>
+						12
+					</Button>
 
-				<Button endIcon={<ThumbDownOutlined />}>
-					34
-				</Button>
-			</ButtonGroup>
+					<Button endIcon={<ThumbDownOutlined />}>
+						34
+					</Button>
+				</div>
+			</Stack>
 		</article>
 	)
 }
