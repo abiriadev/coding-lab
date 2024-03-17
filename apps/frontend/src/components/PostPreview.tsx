@@ -3,6 +3,7 @@ import {
 	ThumbDown,
 	ThumbUpOutlined,
 	ThumbDownOutlined,
+	ChatBubbleOutlineOutlined,
 } from '@mui/icons-material'
 import { Button, Stack } from '@mui/material'
 
@@ -31,6 +32,14 @@ export const PostPreview = ({
 						34
 					</Button>
 				</div>
+
+				<Button
+					startIcon={
+						<ChatBubbleOutlineOutlined />
+					}
+				>
+					56
+				</Button>
 			</Stack>
 		</article>
 	)
