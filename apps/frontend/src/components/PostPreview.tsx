@@ -1,7 +1,7 @@
 export const PostPreview = () => {
 	return (
-		<article>
-			<h2>Title</h2>
+		<article className="font-sans">
+			<h2 className="text-2xl font-bold">Title</h2>
 			<p>content</p>
 		</article>
 	)
