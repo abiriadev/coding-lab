@@ -9,7 +9,9 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
 	return (
 		<article className="font-sans">
-			<h2 className="text-2xl font-bold">{title}</h2>
+			<h2 className="text-2xl font-bold mb-1">
+				{title}
+			</h2>
 			<p>{content}</p>
 		</article>
 	)
