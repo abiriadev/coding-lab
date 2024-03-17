@@ -25,16 +25,23 @@ export const PostPreview = ({
 			<p>{content}</p>
 			<Stack direction="row" spacing={2}>
 				<div>
-					<Button startIcon={<ThumbUpOutlined />}>
+					<Button
+						color="inherit"
+						startIcon={<ThumbUpOutlined />}
+					>
 						12
 					</Button>
 
-					<Button endIcon={<ThumbDownOutlined />}>
+					<Button
+						color="inherit"
+						endIcon={<ThumbDownOutlined />}
+					>
 						34
 					</Button>
 				</div>
 
 				<Button
+					color="inherit"
 					startIcon={
 						<ChatBubbleOutlineOutlined />
 					}
@@ -42,7 +49,10 @@ export const PostPreview = ({
 					56
 				</Button>
 
-				<Button startIcon={<ShareOutlined />}>
+				<Button
+					color="inherit"
+					startIcon={<ShareOutlined />}
+				>
 					Share
 				</Button>
 			</Stack>
