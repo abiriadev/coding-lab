@@ -7,6 +7,7 @@ import {
 	ShareOutlined,
 } from '@mui/icons-material'
 import { Avatar, Button, Stack } from '@mui/material'
+import { RelativeTimestamp } from './RelativeTimestamp'
 
 export interface PostPreviewProps {
 	title: string
@@ -19,13 +20,15 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
 	return (
 		<article className="font-sans">
-			<Stack direction="row">
-				<Avatar
-					sx={{ width: 30, height: 30 }}
-					className="mb-2"
-				>
+			<Stack
+				direction="row"
+				spacing={2}
+				className="mb-2"
+			>
+				<Avatar sx={{ width: 30, height: 30 }}>
 					A
 				</Avatar>
+				<RelativeTimestamp time={new Date()} />
 			</Stack>
 			<h2 className="text-2xl font-bold mb-1">
 				{title}
