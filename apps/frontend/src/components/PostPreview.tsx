@@ -14,6 +14,7 @@ export interface PostPreviewProps {
 	content: string
 	upvotes?: number
 	downvotes?: number
+	commentsCount?: number
 }
 
 export const PostPreview = ({
@@ -21,6 +22,7 @@ export const PostPreview = ({
 	content,
 	upvotes,
 	downvotes,
+	commentsCount,
 }: PostPreviewProps) => {
 	return (
 		<article className="font-sans">
@@ -76,7 +78,7 @@ export const PostPreview = ({
 						<ChatBubbleOutlineOutlined />
 					}
 				>
-					78
+					{commentsCount ?? 0}
 				</Button>
 
 				<Button
