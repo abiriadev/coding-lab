@@ -1,9 +1,15 @@
 import { formatDistanceToNow } from 'date-fns'
 
-export const RelativeTimestamp = (time: Date) => {
+export interface RelativeTimestampProps {
+	time: Date
+}
+
+export const RelativeTimestamp = ({
+	time,
+}: RelativeTimestampProps) => {
 	return (
 		<time dateTime={time.toUTCString()}>
-			{formatDistanceToNow(time)}
+			{`${formatDistanceToNow(time)} ago`}
 		</time>
 	)
 }
