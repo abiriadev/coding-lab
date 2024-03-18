@@ -23,7 +23,11 @@ export const PostPreview = ({
 				{title}
 			</h2>
 			<p>{content}</p>
-			<Stack direction="row" spacing={2}>
+			<Stack
+				className="mt-1"
+				direction="row"
+				spacing={2}
+			>
 				<div>
 					<Button
 						color="inherit"
