@@ -14,6 +14,7 @@ export interface PostPreviewProps {
 	content: string
 	author?: string
 	avatar?: string
+	postedAt?: Date
 	upvotes?: number
 	downvotes?: number
 	commentsCount?: number
@@ -24,6 +25,7 @@ export const PostPreview = ({
 	content,
 	author,
 	avatar,
+	postedAt,
 	upvotes,
 	downvotes,
 	commentsCount,
@@ -48,7 +50,9 @@ export const PostPreview = ({
 					/>
 					<span>{author ?? 'Author'}</span>
 				</Stack>
-				<RelativeTimestamp time={new Date()} />
+				<RelativeTimestamp
+					time={postedAt ?? new Date()}
+				/>
 			</Stack>
 			<h2 className="text-2xl font-bold mb-1">
 				{title}
