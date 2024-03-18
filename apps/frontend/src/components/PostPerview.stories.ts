@@ -8,15 +8,23 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	args: {
+		title: 'Best way to code Java on an iPad',
+		content:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+	},
 } satisfies Meta<typeof PostPreview>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
+	args: {},
+}
+
+export const Votes: Story = {
 	args: {
-		title: 'Best way to code Java on an iPad',
-		content:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+		upvote: 11,
+		downvote: 7,
 	},
 }
