@@ -28,3 +28,10 @@ export const Votes: Story = {
 		downvotes: 7,
 	},
 }
+
+export const Author: Story = {
+	args: {
+		author: 'Abiria',
+		avatar: 'https://i.pravatar.cc/300',
+	},
+}
