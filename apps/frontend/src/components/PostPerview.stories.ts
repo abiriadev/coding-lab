@@ -24,7 +24,7 @@ export const Primary: Story = {
 
 export const Votes: Story = {
 	args: {
-		upvote: 11,
-		downvote: 7,
+		upvotes: 11,
+		downvotes: 7,
 	},
 }

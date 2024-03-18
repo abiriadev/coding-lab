@@ -12,15 +12,15 @@ import { RelativeTimestamp } from './RelativeTimestamp'
 export interface PostPreviewProps {
 	title: string
 	content: string
-	upvote?: number
-	downvote?: number
+	upvotes?: number
+	downvotes?: number
 }
 
 export const PostPreview = ({
 	title,
 	content,
-	upvote,
-	downvote,
+	upvotes,
+	downvotes,
 }: PostPreviewProps) => {
 	return (
 		<article className="font-sans">
@@ -59,14 +59,14 @@ export const PostPreview = ({
 						color="inherit"
 						startIcon={<ThumbUpOutlined />}
 					>
-						{upvote ?? 0}
+						{upvotes ?? 0}
 					</Button>
 
 					<Button
 						color="inherit"
 						endIcon={<ThumbDownOutlined />}
 					>
-						{downvote ?? 0}
+						{downvotes ?? 0}
 					</Button>
 				</div>
 
