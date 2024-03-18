@@ -24,10 +24,21 @@ export const PostPreview = ({
 				direction="row"
 				spacing={2}
 				className="mb-2"
+				alignItems="center"
 			>
-				<Avatar sx={{ width: 30, height: 30 }}>
-					A
-				</Avatar>
+				<Stack
+					className="author"
+					direction="row"
+					alignItems="center"
+				>
+					<Avatar
+						sx={{ width: 30, height: 30 }}
+						className="mr-2"
+					>
+						A
+					</Avatar>
+					<span>Author</span>
+				</Stack>
 				<RelativeTimestamp time={new Date()} />
 			</Stack>
 			<h2 className="text-2xl font-bold mb-1">
