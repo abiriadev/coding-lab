@@ -1,5 +1,14 @@
-import { AppBar as MuiAppBar } from '@mui/material'
+import {
+	AppBar as MuiAppBar,
+	Typography,
+} from '@mui/material'
 
 export const AppBar = () => {
-	return <MuiAppBar></MuiAppBar>
+	return (
+		<MuiAppBar color="inherit" className="p-3">
+			<Typography variant="h4" component="h1">
+				Coding Lab
+			</Typography>
+		</MuiAppBar>
+	)
 }
