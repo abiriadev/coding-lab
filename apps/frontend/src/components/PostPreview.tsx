@@ -12,6 +12,8 @@ import { RelativeTimestamp } from './RelativeTimestamp'
 export interface PostPreviewProps {
 	title: string
 	content: string
+	author?: string
+	avatar?: string
 	upvotes?: number
 	downvotes?: number
 	commentsCount?: number
@@ -20,6 +22,8 @@ export interface PostPreviewProps {
 export const PostPreview = ({
 	title,
 	content,
+	author,
+	avatar,
 	upvotes,
 	downvotes,
 	commentsCount,
@@ -40,10 +44,9 @@ export const PostPreview = ({
 					<Avatar
 						sx={{ width: 30, height: 30 }}
 						className="mr-2"
-					>
-						A
-					</Avatar>
-					<span>Author</span>
+						src={avatar}
+					/>
+					<span>{author ?? 'Author'}</span>
 				</Stack>
 				<RelativeTimestamp time={new Date()} />
 			</Stack>
