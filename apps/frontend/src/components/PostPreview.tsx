@@ -6,7 +6,7 @@ import {
 	ChatBubbleOutlineOutlined,
 	ShareOutlined,
 } from '@mui/icons-material'
-import { Button, Stack } from '@mui/material'
+import { Avatar, Button, Stack } from '@mui/material'
 
 export interface PostPreviewProps {
 	title: string
@@ -19,6 +19,14 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
 	return (
 		<article className="font-sans">
+			<Stack direction="row">
+				<Avatar
+					sx={{ width: 30, height: 30 }}
+					className="mb-2"
+				>
+					A
+				</Avatar>
+			</Stack>
 			<h2 className="text-2xl font-bold mb-1">
 				{title}
 			</h2>
