@@ -2,6 +2,7 @@ import {
 	AppBar,
 	Stack,
 	Unstable_Grid2 as Grid,
+	Divider,
 } from '@mui/material'
 import { PostPreview } from './components/PostPreview'
 
@@ -18,6 +19,14 @@ function App() {
 						<Stack
 							className="w-full"
 							spacing={2}
+							divider={
+								<Divider
+									variant="fullWidth"
+									sx={{
+										borderBottomWidth: 2,
+									}}
+								/>
+							}
 						>
 							<PostPreview
 								title="Title"
