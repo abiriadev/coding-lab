@@ -18,7 +18,6 @@ function App() {
 					<main className="w-full">
 						<Stack
 							className="w-full"
-							spacing={2}
 							divider={
 								<Divider
 									variant="fullWidth"

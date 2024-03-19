@@ -34,7 +34,7 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
 	return (
 		<article
-			className={`font-sans ${stretch ? 'w-full' : ''}`}
+			className={`font-sans rounded-xl hover:bg-[#f2f4f5] p-3 ${stretch ? 'w-full' : ''}`}
 		>
 			<Stack
 				direction="row"
