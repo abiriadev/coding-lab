@@ -35,3 +35,9 @@ export const Author: Story = {
 		avatar: 'https://i.pravatar.cc/300',
 	},
 }
+
+export const Stretch: Story = {
+	args: {
+		stretch: true,
+	},
+}

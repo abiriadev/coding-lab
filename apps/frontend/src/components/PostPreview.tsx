@@ -18,6 +18,7 @@ export interface PostPreviewProps {
 	upvotes?: number
 	downvotes?: number
 	commentsCount?: number
+	stretch?: boolean
 }
 
 export const PostPreview = ({
@@ -29,9 +30,12 @@ export const PostPreview = ({
 	upvotes,
 	downvotes,
 	commentsCount,
+	stretch,
 }: PostPreviewProps) => {
 	return (
-		<article className="font-sans">
+		<article
+			className={`font-sans ${stretch ? 'w-full' : ''}`}
+		>
 			<Stack
 				direction="row"
 				spacing={2}
