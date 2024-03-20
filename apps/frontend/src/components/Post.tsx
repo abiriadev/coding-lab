@@ -3,20 +3,30 @@ import {
 	Button,
 	Stack,
 } from '@mui/material'
+import { Comment } from './Comment'
 
 export interface PostProps {
 	title: string
 	content: string
+	comments: string[]
 }
 
-export const Post = ({ title, content }: PostProps) => {
+export const Post = ({
+	title,
+	content,
+	comments,
+}: PostProps) => {
 	return (
 		<article>
 			<h1>{title}</h1>
 			<main>{content}</main>
 			<div className="comments">
 				<Button>Add new comment</Button>
-				<Stack></Stack>
+				<Stack>
+					{comments.map(comment => (
+						<Comment content={comment} />
+					))}
+				</Stack>
 			</div>
 		</article>
 	)
