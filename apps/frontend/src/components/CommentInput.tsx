@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { TextareaAutosize } from '@mui/material'
 import { FlatButton } from './FlatButton'
 
-export const CommentInput = () => {
+export interface CommentInputProps {
+	className?: string
+}
+
+export const CommentInput = ({
+	className,
+}: CommentInputProps) => {
 	const [inputMode, setInputMode] = useState(false)
 	const ta = useRef<null | HTMLTextAreaElement>(null)
 
@@ -13,7 +19,9 @@ export const CommentInput = () => {
 	}, [inputMode])
 
 	return (
-		<div className="border-2 border-solid rounded-[1.25em] p-2 border-neutral-400 focus-within:border-neutral-800">
+		<div
+			className={`border-2 border-solid rounded-[1.25em] p-2 border-neutral-400 focus-within:border-neutral-800 ${className}`}
+		>
 			{inputMode ? (
 				<div className="flex flex-col">
 					<TextareaAutosize
