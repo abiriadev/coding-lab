@@ -6,11 +6,15 @@ export interface CommentProps {
 
 export const Comment = ({ content }: CommentProps) => {
 	return (
-		<div className="flex">
+		<div className="flex gap-3">
 			<Avatar></Avatar>
 			<div>
-				<div>Author</div>
-				<div>{content}</div>
+				<div className="text-12">
+					<span className="font-bold hover:underline">
+						Author
+					</span>
+				</div>
+				<div className="text-14">{content}</div>
 			</div>
 		</div>
 	)
