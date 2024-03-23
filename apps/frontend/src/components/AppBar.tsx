@@ -35,7 +35,7 @@ export const AppBar = ({ position }: AppBarProps) => {
 			color="inherit"
 			className="p-4"
 		>
-			<div className="flex justify-start items-center gap-3">
+			<header className="flex justify-start items-center gap-3">
 				<h1 className="m-0 mr-auto">Coding Lab</h1>
 				<IconContext.Provider
 					value={{
@@ -82,7 +82,7 @@ export const AppBar = ({ position }: AppBarProps) => {
 						<ListItemText>Login</ListItemText>
 					</MenuItem>
 				</Menu>
-			</div>
+			</header>
 		</MuiAppBar>
 	)
 }

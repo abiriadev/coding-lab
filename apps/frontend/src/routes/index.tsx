@@ -15,9 +15,7 @@ import {
 export const IndexPage = () => {
 	return (
 		<>
-			<header>
-				<AppBar position="sticky"></AppBar>
-			</header>
+			<AppBar position="sticky"></AppBar>
 			<Grid container spacing={2} className="m-0 p-0">
 				<Grid xs className="m-0 p-0"></Grid>
 				<Grid xs={8} className="m-0 p-0">
