@@ -1,5 +1,7 @@
 import {
+	ThumbDown,
 	ThumbDownOutlined,
+	ThumbUp,
 	ThumbUpOutlined,
 } from '@mui/icons-material'
 import { RoundButton } from './RoundButton'
@@ -7,16 +9,24 @@ import { RoundButton } from './RoundButton'
 export interface VoteButtonProps {
 	down?: boolean
 	count?: number
+	pressed?: boolean
 }
 
 export const VoteButton = ({
 	down,
 	count,
+	pressed,
 }: VoteButtonProps) => (
 	<RoundButton
 		icon={
 			down ? (
-				<ThumbDownOutlined />
+				pressed ? (
+					<ThumbDown />
+				) : (
+					<ThumbDownOutlined />
+				)
+			) : pressed ? (
+				<ThumbUp />
 			) : (
 				<ThumbUpOutlined />
 			)
