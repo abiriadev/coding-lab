@@ -18,3 +18,10 @@ export const Primary: Story = {
 		count: 123,
 	},
 }
+
+export const DownVote: Story = {
+	args: {
+		down: true,
+		count: 123,
+	},
+}
