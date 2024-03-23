@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RoundButton } from './RoundButton'
+import { ShareOutlined } from '@mui/icons-material'
 
 const meta = {
 	title: 'Example/RoundButton',
@@ -14,5 +15,8 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-	args: {},
+	args: {
+		icon: <ShareOutlined />,
+		children: 'Share',
+	},
 }
