@@ -9,9 +9,15 @@ import {
 } from '@mui/material'
 import { Comment } from './Comment'
 import { useState } from 'react'
-import { MoreHoriz } from '@mui/icons-material'
+import {
+	LeaderboardOutlined,
+	LocalFireDepartmentOutlined,
+	MoreHoriz,
+	History,
+} from '@mui/icons-material'
 import { RelativeTimestamp } from './RelativeTimestamp'
 import Markdown from 'react-markdown'
+import { DropDownSelect } from './DropDownSelect'
 
 export interface PostProps {
 	title: string
@@ -47,7 +53,27 @@ export const Post = ({
 			</main>
 			<div className="flex items-center justify-between">
 				<span>{comments.length} comments</span>
-				<Button>Most voted</Button>
+				<DropDownSelect
+					options={[
+						{
+							icon: <LeaderboardOutlined />,
+							label: 'Top',
+							value: 'top',
+						},
+						{
+							icon: <History />,
+							label: 'Old',
+							value: 'old',
+						},
+						{
+							icon: (
+								<LocalFireDepartmentOutlined />
+							),
+							label: 'New',
+							value: 'new',
+						},
+					]}
+				/>
 			</div>
 			<Stack gap={1} divider={<Divider />}>
 				{comments.map(comment => (
