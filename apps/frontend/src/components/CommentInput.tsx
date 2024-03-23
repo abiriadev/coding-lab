@@ -1,3 +1,13 @@
+import { useState } from 'react'
+
 export const CommentInput = () => {
-	return <textarea></textarea>
+	const [inputMode, setInputMode] = useState(false)
+
+	return inputMode ? (
+		<textarea></textarea>
+	) : (
+		<div onClick={() => setInputMode(true)}>
+			Add new comment...
+		</div>
+	)
 }
