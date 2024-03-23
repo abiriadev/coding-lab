@@ -1,7 +1,4 @@
-import {
-	AppBar as MuiAppBar,
-	Typography,
-} from '@mui/material'
+import { Avatar, AppBar as MuiAppBar } from '@mui/material'
 
 export interface AppBarProps {
 	position?:
@@ -17,11 +14,13 @@ export const AppBar = ({ position }: AppBarProps) => {
 		<MuiAppBar
 			position={position}
 			color="inherit"
-			className="p-3"
+			className="p-4"
 		>
-			<Typography variant="h4" component="h1">
-				Coding Lab
-			</Typography>
+			<div className="flex justify-start items-center">
+				<h1 className="m-0 mr-auto">Coding Lab</h1>
+
+				<Avatar className=""></Avatar>
+			</div>
 		</MuiAppBar>
 	)
 }

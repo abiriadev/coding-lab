@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Post } from './Post.1'
+import { Post } from './Post'
 
 const meta = {
 	title: 'Example/Post',

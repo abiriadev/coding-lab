@@ -5,9 +5,12 @@ const meta = {
 	title: 'Example/AppBar',
 	component: AppBar,
 	parameters: {
-		layout: 'centered',
+		layout: 'padded',
 	},
 	tags: ['autodocs'],
+	args: {
+		position: 'static',
+	},
 } satisfies Meta<typeof AppBar>
 
 export default meta
