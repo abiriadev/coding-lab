@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface FlatButtonProps {
-	children: ReactNode
+	children?: ReactNode
 }
 
 export const FlatButton = ({
