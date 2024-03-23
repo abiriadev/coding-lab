@@ -17,7 +17,12 @@ export const Comment = ({
 				<Stack
 					className="text-12"
 					direction="row"
-					spacing={2}
+					spacing={1}
+					divider={
+						<span className="place-items-center">
+							•
+						</span>
+					}
 				>
 					<span className="font-bold hover:underline">
 						Author
