@@ -1,4 +1,4 @@
-import { Avatar } from '@mui/material'
+import { Avatar, Stack } from '@mui/material'
 
 export interface CommentProps {
 	content: string
@@ -9,11 +9,11 @@ export const Comment = ({ content }: CommentProps) => {
 		<div className="flex gap-3">
 			<Avatar></Avatar>
 			<div>
-				<div className="text-12">
+				<Stack className="text-12">
 					<span className="font-bold hover:underline">
 						Author
 					</span>
-				</div>
+				</Stack>
 				<div className="text-14">{content}</div>
 			</div>
 		</div>
