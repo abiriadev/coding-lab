@@ -71,6 +71,7 @@ export const PostPreview = ({
 					<Button
 						color="inherit"
 						startIcon={<ThumbUpOutlined />}
+						className="hover:rounded-full"
 					>
 						{upvotes ?? 0}
 					</Button>
@@ -78,6 +79,7 @@ export const PostPreview = ({
 					<Button
 						color="inherit"
 						endIcon={<ThumbDownOutlined />}
+						className="hover:rounded-full"
 					>
 						{downvotes ?? 0}
 					</Button>
@@ -88,6 +90,7 @@ export const PostPreview = ({
 					startIcon={
 						<ChatBubbleOutlineOutlined />
 					}
+					className="hover:rounded-full"
 				>
 					{commentsCount ?? 0}
 				</Button>
@@ -95,6 +98,7 @@ export const PostPreview = ({
 				<Button
 					color="inherit"
 					startIcon={<ShareOutlined />}
+					className="hover:rounded-full"
 				>
 					Share
 				</Button>
