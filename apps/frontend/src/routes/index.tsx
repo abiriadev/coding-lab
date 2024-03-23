@@ -11,6 +11,7 @@ import {
 	LocalFireDepartmentOutlined,
 	History,
 } from '@mui/icons-material'
+import { data } from '@/data'
 
 export const IndexPage = () => {
 	return (
@@ -57,30 +58,19 @@ export const IndexPage = () => {
 								/>
 							}
 						>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
-							<PostPreview
-								title="Title"
-								content="content"
-							/>
+							{data.posts.map(
+								({
+									id,
+									title,
+									content,
+								}) => (
+									<PostPreview
+										key={id}
+										title={title}
+										content={content}
+									/>
+								),
+							)}
 						</Stack>
 					</main>
 				</Grid>
