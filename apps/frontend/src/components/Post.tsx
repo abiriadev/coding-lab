@@ -28,7 +28,7 @@ export const Post = ({
 
 	return (
 		<article className="relative">
-			<div className="flex">
+			<div className="flex gap-3">
 				<Avatar></Avatar>
 				<div className="text-12">
 					<div className="font-bold hover:underline">
