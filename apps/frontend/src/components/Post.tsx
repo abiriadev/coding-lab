@@ -42,6 +42,7 @@ export const Post = ({
 	const [moreBtn, setMoreBtn] =
 		useState<null | HTMLElement>(null)
 	const moreOpen = moreBtn !== null
+	const closeMore = () => setMoreBtn(null)
 
 	return (
 		<article className="relative">
@@ -110,15 +111,15 @@ export const Post = ({
 			<Menu
 				anchorEl={moreBtn}
 				open={moreOpen}
-				onClose={() => setMoreBtn(null)}
+				onClose={closeMore}
 			>
-				<MenuItem>
+				<MenuItem onClick={closeMore}>
 					<ListItemIcon>
 						<EditOutlined />
 					</ListItemIcon>
 					<ListItemText>Edit</ListItemText>
 				</MenuItem>
-				<MenuItem>
+				<MenuItem onClick={closeMore}>
 					<ListItemIcon>
 						<DeleteOutlined />
 					</ListItemIcon>
