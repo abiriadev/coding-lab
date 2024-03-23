@@ -1,12 +1,17 @@
-import { DarkMode, Add } from '@mui/icons-material'
+import { DarkMode, Add, Login } from '@mui/icons-material'
 import {
 	Avatar,
 	IconButton,
+	ListItemIcon,
+	ListItemText,
+	Menu,
+	MenuItem,
 	AppBar as MuiAppBar,
 } from '@mui/material'
 import { RoundButton } from './RoundButton'
 import { FaDiscord, FaGithub } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
+import { useState } from 'react'
 
 export interface AppBarProps {
 	position?:
@@ -18,6 +23,12 @@ export interface AppBarProps {
 }
 
 export const AppBar = ({ position }: AppBarProps) => {
+	const [pfOp, setPfOp] = useState<null | HTMLElement>(
+		null,
+	)
+	const pfOpOpen = pfOp !== null
+	const closeMore = v => setPfOp(null)
+
 	return (
 		<MuiAppBar
 			position={position}
@@ -52,7 +63,25 @@ export const AppBar = ({ position }: AppBarProps) => {
 				<RoundButton icon={<Add />}>
 					Post
 				</RoundButton>
-				<Avatar className=""></Avatar>
+				<IconButton
+					onClick={({ currentTarget }) =>
+						setPfOp(currentTarget)
+					}
+				>
+					<Avatar></Avatar>
+				</IconButton>
+				<Menu
+					anchorEl={pfOp}
+					open={pfOpOpen}
+					onClose={closeMore}
+				>
+					<MenuItem onClick={closeMore}>
+						<ListItemIcon>
+							<Login />
+						</ListItemIcon>
+						<ListItemText>Login</ListItemText>
+					</MenuItem>
+				</Menu>
 			</div>
 		</MuiAppBar>
 	)
