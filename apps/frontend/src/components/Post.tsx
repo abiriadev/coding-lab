@@ -13,6 +13,7 @@ import { DropDownSelect } from './DropDownSelect'
 import { VoteButton } from './VoteButton'
 import { ShareButton } from './ShareButton'
 import { MoreOptions } from './MoreOptions'
+import { CommentInput } from './CommentInput'
 
 export interface PostProps {
 	title: string
@@ -79,6 +80,7 @@ export const Post = ({
 					]}
 				/>
 			</div>
+			<CommentInput className="mb-3 mt-5" />
 			<Stack gap={1} divider={<Divider />}>
 				{comments.map((comment, i) => (
 					<Comment key={i} content={comment} />
