@@ -20,14 +20,15 @@ export const Post = ({
 		<article>
 			<h1>{title}</h1>
 			<main>{content}</main>
-			<div className="comments">
-				<Button>Add new comment</Button>
-				<Stack>
-					{comments.map(comment => (
-						<Comment content={comment} />
-					))}
-				</Stack>
+			<div className="flex items-center justify-between">
+				<span>{comments.length} comments</span>
+				<Button>Most voted</Button>
 			</div>
+			<Stack>
+				{comments.map(comment => (
+					<Comment content={comment} />
+				))}
+			</Stack>
 		</article>
 	)
 }
