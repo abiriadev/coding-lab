@@ -11,6 +11,7 @@ export const PostPage = () => {
 
 	return (
 		<Layout>
+			<div className="h-10"></div>
 			<Post
 				title={postdata.title}
 				content={postdata.content}
