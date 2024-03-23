@@ -1,10 +1,10 @@
 import {
-	AppBar,
 	Stack,
 	Unstable_Grid2 as Grid,
 	Divider,
 } from '@mui/material'
-import { PostPreview } from '../components/PostPreview'
+import { PostPreview } from '@components/PostPreview'
+import { AppBar } from '@components/AppBar'
 
 export const IndexPage = () => {
 	return (
