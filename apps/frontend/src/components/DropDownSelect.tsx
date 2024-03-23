@@ -39,7 +39,9 @@ export const DropDownSelect = ({
 						style={{ gap: '10px' }}
 					>
 						{icon}
-						<span>{label}</span>
+						<span className="font-medium">
+							{label}
+						</span>
 					</div>
 				</MenuItem>
 			))}
