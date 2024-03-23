@@ -6,7 +6,7 @@ import {
 	Button,
 } from '@mui/material'
 import { Comment } from './Comment'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { MoreHoriz } from '@mui/icons-material'
 
 export interface PostProps {
@@ -20,7 +20,9 @@ export const Post = ({
 	content,
 	comments,
 }: PostProps) => {
-	const moreBtn = useRef(null)
+	const [moreBtn, setMoreBtn] =
+		useState<null | HTMLElement>(null)
+	const moreOpen = moreBtn !== null
 
 	return (
 		<article className="relative">
@@ -36,11 +38,19 @@ export const Post = ({
 				))}
 			</Stack>
 			<div className="absolute right-0 top-0">
-				<IconButton ref={moreBtn}>
+				<IconButton
+					onClick={({ currentTarget }) =>
+						setMoreBtn(currentTarget)
+					}
+				>
 					<MoreHoriz />
 				</IconButton>
 			</div>
-			<Menu anchorEl={moreBtn.current} open={true}>
+			<Menu
+				anchorEl={moreBtn}
+				open={moreOpen}
+				onClose={() => setMoreBtn(null)}
+			>
 				<MenuItem>A</MenuItem>
 			</Menu>
 		</article>
