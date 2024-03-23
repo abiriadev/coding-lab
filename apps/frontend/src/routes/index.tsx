@@ -60,32 +60,26 @@ export const IndexPage = () => {
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 							<PostPreview
 								title="Title"
 								content="content"
-								stretch
 							/>
 						</Stack>
 					</main>
