@@ -29,7 +29,10 @@ export const CommentInput = () => {
 					</div>
 				</div>
 			) : (
-				<div onClick={() => setInputMode(true)}>
+				<div
+					className="m-3 text-neutral-400"
+					onClick={() => setInputMode(true)}
+				>
 					Add new comment...
 				</div>
 			)}
