@@ -1,8 +1,4 @@
-import {
-	DeleteOutlined,
-	EditOutlined,
-	MoreHoriz,
-} from '@mui/icons-material'
+import { MoreHoriz } from '@mui/icons-material'
 import {
 	IconButton,
 	ListItemIcon,
@@ -10,9 +6,18 @@ import {
 	Menu,
 	MenuItem,
 } from '@mui/material'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
-export const MoreOptions = () => {
+export interface MoreOptionsProps {
+	options: Array<{
+		label: string
+		icon: ReactNode
+	}>
+}
+
+export const MoreOptions = ({
+	options,
+}: MoreOptionsProps) => {
 	const [moreBtn, setMoreBtn] =
 		useState<null | HTMLElement>(null)
 	const moreOpen = moreBtn !== null
@@ -32,18 +37,12 @@ export const MoreOptions = () => {
 				open={moreOpen}
 				onClose={closeMore}
 			>
-				<MenuItem onClick={closeMore}>
-					<ListItemIcon>
-						<EditOutlined />
-					</ListItemIcon>
-					<ListItemText>Edit</ListItemText>
-				</MenuItem>
-				<MenuItem onClick={closeMore}>
-					<ListItemIcon>
-						<DeleteOutlined />
-					</ListItemIcon>
-					<ListItemText>Delete</ListItemText>
-				</MenuItem>
+				{options.map(({ label, icon }) => (
+					<MenuItem onClick={closeMore}>
+						<ListItemIcon>{icon}</ListItemIcon>
+						<ListItemText>{label}</ListItemText>
+					</MenuItem>
+				))}
 			</Menu>
 		</>
 	)
