@@ -9,7 +9,7 @@ export const RelativeTimestamp = ({
 }: RelativeTimestampProps) => {
 	return (
 		<time
-			className="cursor-default"
+			className="cursor-default text-neutral-500"
 			title={time.toISOString()}
 			dateTime={time.toUTCString()}
 		>
