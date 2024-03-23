@@ -38,7 +38,9 @@ export const Post = ({
 					<RelativeTimestamp time={new Date()} />
 				</div>
 			</div>
-			<h1>{title}</h1>
+			<h1 className="text-2xl font-semibold mt-1 mb-3">
+				{title}
+			</h1>
 			<main className="text-14">
 				<Markdown>{content}</Markdown>
 			</main>
