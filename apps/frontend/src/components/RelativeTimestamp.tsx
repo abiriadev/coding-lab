@@ -8,7 +8,11 @@ export const RelativeTimestamp = ({
 	time,
 }: RelativeTimestampProps) => {
 	return (
-		<time dateTime={time.toUTCString()}>
+		<time
+			className="cursor-default"
+			title={time.toISOString()}
+			dateTime={time.toUTCString()}
+		>
 			{`${formatDistanceToNow(time)} ago`}
 		</time>
 	)
