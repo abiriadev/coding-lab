@@ -8,6 +8,9 @@ import {
 } from '@mui/icons-material'
 import { Avatar, Button, Stack } from '@mui/material'
 import { RelativeTimestamp } from './RelativeTimestamp'
+import { VoteButton } from './VoteButton'
+import { CommentsButton } from './CommentsButton'
+import { ShareButton } from './ShareButton'
 
 export interface PostPreviewProps {
 	title: string
@@ -67,39 +70,10 @@ export const PostPreview = ({
 				direction="row"
 				spacing={2}
 			>
-				<Button
-					color="inherit"
-					startIcon={<ThumbUpOutlined />}
-					className="hover:rounded-full"
-				>
-					{upvotes ?? 0}
-				</Button>
-
-				<Button
-					color="inherit"
-					startIcon={<ThumbDownOutlined />}
-					className="hover:rounded-full"
-				>
-					{downvotes ?? 0}
-				</Button>
-
-				<Button
-					color="inherit"
-					startIcon={
-						<ChatBubbleOutlineOutlined />
-					}
-					className="hover:rounded-full"
-				>
-					{commentsCount ?? 0}
-				</Button>
-
-				<Button
-					color="inherit"
-					startIcon={<ShareOutlined />}
-					className="hover:rounded-full"
-				>
-					Share
-				</Button>
+				<VoteButton count={upvotes} />
+				<VoteButton count={upvotes} down />
+				<CommentsButton count={commentsCount} />
+				<ShareButton />
 			</Stack>
 		</article>
 	)
