@@ -7,5 +7,9 @@ export interface FlatButtonProps {
 export const FlatButton = ({
 	children,
 }: FlatButtonProps) => {
-	return <button>{children}</button>
+	return (
+		<button className="rounded-full border-0 bg-neutral-200 hover:bg-neutral-300 active:bg-neutral-400 px-5 py-3 font-bold">
+			{children}
+		</button>
+	)
 }
