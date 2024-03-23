@@ -38,7 +38,10 @@ export const MoreOptions = ({
 				onClose={closeMore}
 			>
 				{options.map(({ label, icon }) => (
-					<MenuItem onClick={closeMore}>
+					<MenuItem
+						key={label}
+						onClick={closeMore}
+					>
 						<ListItemIcon>{icon}</ListItemIcon>
 						<ListItemText>{label}</ListItemText>
 					</MenuItem>
