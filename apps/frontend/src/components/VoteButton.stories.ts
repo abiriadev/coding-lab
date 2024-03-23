@@ -25,3 +25,10 @@ export const DownVote: Story = {
 		count: 123,
 	},
 }
+
+export const Pressed: Story = {
+	args: {
+		pressed: true,
+		count: 123,
+	},
+}
