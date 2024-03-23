@@ -30,8 +30,10 @@ export const Post = ({
 		<article className="relative">
 			<div className="flex">
 				<Avatar></Avatar>
-				<div>
-					<div>Abiria</div>
+				<div className="text-12">
+					<div className="font-bold hover:underline">
+						Author
+					</div>
 					<RelativeTimestamp time={new Date()} />
 				</div>
 			</div>
