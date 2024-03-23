@@ -5,6 +5,8 @@ import {
 	IconButton,
 	Avatar,
 	Divider,
+	ListItemText,
+	ListItemIcon,
 } from '@mui/material'
 import { Comment } from './Comment'
 import { useState } from 'react'
@@ -13,6 +15,8 @@ import {
 	LocalFireDepartmentOutlined,
 	MoreHoriz,
 	History,
+	EditOutlined,
+	DeleteOutlined,
 } from '@mui/icons-material'
 import { RelativeTimestamp } from './RelativeTimestamp'
 import Markdown from 'react-markdown'
@@ -108,7 +112,18 @@ export const Post = ({
 				open={moreOpen}
 				onClose={() => setMoreBtn(null)}
 			>
-				<MenuItem>A</MenuItem>
+				<MenuItem>
+					<ListItemIcon>
+						<EditOutlined />
+					</ListItemIcon>
+					<ListItemText>Edit</ListItemText>
+				</MenuItem>
+				<MenuItem>
+					<ListItemIcon>
+						<DeleteOutlined />
+					</ListItemIcon>
+					<ListItemText>Delete</ListItemText>
+				</MenuItem>
 			</Menu>
 		</article>
 	)
