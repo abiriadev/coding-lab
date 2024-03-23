@@ -1,19 +1,8 @@
-import {
-	Stack,
-	MenuItem,
-	Menu,
-	IconButton,
-	Avatar,
-	Divider,
-	ListItemText,
-	ListItemIcon,
-} from '@mui/material'
+import { Stack, Avatar, Divider } from '@mui/material'
 import { Comment } from './Comment'
-import { useState } from 'react'
 import {
 	LeaderboardOutlined,
 	LocalFireDepartmentOutlined,
-	MoreHoriz,
 	History,
 	EditOutlined,
 	DeleteOutlined,
@@ -23,6 +12,7 @@ import Markdown from 'react-markdown'
 import { DropDownSelect } from './DropDownSelect'
 import { VoteButton } from './VoteButton'
 import { ShareButton } from './ShareButton'
+import { MoreOptions } from './MoreOptions'
 
 export interface PostProps {
 	title: string
@@ -39,11 +29,6 @@ export const Post = ({
 	downvotes,
 	comments,
 }: PostProps) => {
-	const [moreBtn, setMoreBtn] =
-		useState<null | HTMLElement>(null)
-	const moreOpen = moreBtn !== null
-	const closeMore = () => setMoreBtn(null)
-
 	return (
 		<article className="relative">
 			<div className="flex gap-3">
@@ -100,32 +85,19 @@ export const Post = ({
 				))}
 			</Stack>
 			<div className="absolute right-0 top-0">
-				<IconButton
-					onClick={({ currentTarget }) =>
-						setMoreBtn(currentTarget)
-					}
-				>
-					<MoreHoriz />
-				</IconButton>
+				<MoreOptions
+					options={[
+						{
+							icon: <EditOutlined />,
+							label: 'Edit',
+						},
+						{
+							icon: <DeleteOutlined />,
+							label: 'Delete',
+						},
+					]}
+				/>
 			</div>
-			<Menu
-				anchorEl={moreBtn}
-				open={moreOpen}
-				onClose={closeMore}
-			>
-				<MenuItem onClick={closeMore}>
-					<ListItemIcon>
-						<EditOutlined />
-					</ListItemIcon>
-					<ListItemText>Edit</ListItemText>
-				</MenuItem>
-				<MenuItem onClick={closeMore}>
-					<ListItemIcon>
-						<DeleteOutlined />
-					</ListItemIcon>
-					<ListItemText>Delete</ListItemText>
-				</MenuItem>
-			</Menu>
 		</article>
 	)
 }
