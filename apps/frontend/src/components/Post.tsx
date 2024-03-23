@@ -7,9 +7,10 @@ import {
 	Avatar,
 } from '@mui/material'
 import { Comment } from './Comment'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { MoreHoriz } from '@mui/icons-material'
 import { RelativeTimestamp } from './RelativeTimestamp'
+import Markdown from 'react-markdown'
 
 export interface PostProps {
 	title: string
@@ -38,7 +39,9 @@ export const Post = ({
 				</div>
 			</div>
 			<h1>{title}</h1>
-			<main>{content}</main>
+			<main>
+				<Markdown>{content}</Markdown>
+			</main>
 			<div className="flex items-center justify-between">
 				<span>{comments.length} comments</span>
 				<Button>Most voted</Button>
