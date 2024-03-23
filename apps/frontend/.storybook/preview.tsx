@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react'
 import '../src/index.css'
+import { StyledEngineProvider } from '@mui/material'
 
 const preview: Preview = {
 	parameters: {
@@ -10,6 +11,13 @@ const preview: Preview = {
 			},
 		},
 	},
+	decorators: [
+		S => (
+			<StyledEngineProvider injectFirst>
+				<S />
+			</StyledEngineProvider>
+		),
+	],
 }
 
 export default preview
