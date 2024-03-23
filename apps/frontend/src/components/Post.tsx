@@ -39,7 +39,7 @@ export const Post = ({
 				</div>
 			</div>
 			<h1>{title}</h1>
-			<main>
+			<main className="text-14">
 				<Markdown>{content}</Markdown>
 			</main>
 			<div className="flex items-center justify-between">
