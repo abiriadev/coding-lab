@@ -1,12 +1,20 @@
-import { ShareOutlined } from '@mui/icons-material'
 import { Button } from '@mui/material'
+import { ReactNode } from 'react'
 
-export const RoundButton = () => (
+export interface RoundButtonProps {
+	children: ReactNode
+	icon?: ReactNode
+}
+
+export const RoundButton = ({
+	icon,
+	children,
+}: RoundButtonProps) => (
 	<Button
 		color="inherit"
-		startIcon={<ShareOutlined />}
+		startIcon={icon}
 		className="rounded-full bg-neutral-200 px-3"
 	>
-		Share
+		{children}
 	</Button>
 )
