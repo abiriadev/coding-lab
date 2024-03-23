@@ -38,7 +38,7 @@ export const DropDownSelect = ({
 			}}
 		>
 			{options.map(({ icon, label, value }) => (
-				<MenuItem value={value}>
+				<MenuItem key={value} value={value}>
 					<div
 						className="flex items-center"
 						style={{ gap: '10px' }}
