@@ -11,7 +11,7 @@ export const Comment = ({
 	postedAt,
 }: CommentProps) => {
 	return (
-		<div className="flex gap-3">
+		<div className="flex gap-3 p-4">
 			<Avatar></Avatar>
 			<div>
 				<Stack
