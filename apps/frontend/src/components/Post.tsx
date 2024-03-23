@@ -18,16 +18,22 @@ import {
 import { RelativeTimestamp } from './RelativeTimestamp'
 import Markdown from 'react-markdown'
 import { DropDownSelect } from './DropDownSelect'
+import { VoteButton } from './VoteButton'
+import { ShareButton } from './ShareButton'
 
 export interface PostProps {
 	title: string
 	content: string
+	upvotes?: number
+	downvotes?: number
 	comments: string[]
 }
 
 export const Post = ({
 	title,
 	content,
+	upvotes,
+	downvotes,
 	comments,
 }: PostProps) => {
 	const [moreBtn, setMoreBtn] =
@@ -51,6 +57,15 @@ export const Post = ({
 			<main className="text-14">
 				<Markdown>{content}</Markdown>
 			</main>
+			<Stack
+				direction="row"
+				gap={2}
+				className="mt-6 mb-10"
+			>
+				<VoteButton count={upvotes} />
+				<VoteButton count={downvotes} down />
+				<ShareButton />
+			</Stack>
 			<div className="flex items-center justify-between">
 				<span>{comments.length} comments</span>
 				<DropDownSelect
