@@ -1,28 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { StyledEngineProvider } from '@mui/material'
-import {
-	createBrowserRouter,
-	RouterProvider,
-} from 'react-router-dom'
-import { Page404 } from './routes/404.tsx'
-import { IndexPage } from './routes/index.tsx'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router'
 import './index.css'
+import { StrictMode } from 'react'
 
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <IndexPage />,
-		errorElement: <Page404 />,
-	},
-])
-
-ReactDOM.createRoot(
-	document.getElementById('root')!,
-).render(
-	<React.StrictMode>
+createRoot(document.getElementById('root')!).render(
+	<StrictMode>
 		<StyledEngineProvider injectFirst>
 			<RouterProvider router={router} />
 		</StyledEngineProvider>
-	</React.StrictMode>,
+	</StrictMode>,
 )
