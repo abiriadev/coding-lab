@@ -7,11 +7,13 @@ import {
 	createBrowserRouter,
 	RouterProvider,
 } from 'react-router-dom'
+import { Page404 } from './404.tsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
+		errorElement: <Page404 />,
 	},
 ])
 
