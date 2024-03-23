@@ -80,8 +80,8 @@ export const Post = ({
 				/>
 			</div>
 			<Stack gap={1} divider={<Divider />}>
-				{comments.map(comment => (
-					<Comment content={comment} />
+				{comments.map((comment, i) => (
+					<Comment key={i} content={comment} />
 				))}
 			</Stack>
 			<div className="absolute right-0 top-0">
