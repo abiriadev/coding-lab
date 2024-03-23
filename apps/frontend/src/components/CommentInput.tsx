@@ -11,7 +11,13 @@ export const CommentInput = () => {
 				<div className="flex flex-col">
 					<TextareaAutosize className="border-0 outline-0 text-lg mx-3 mt-3 mb-5" />
 					<div className="flex justify-end gap-2">
-						<FlatButton>Cancel</FlatButton>
+						<FlatButton
+							onClick={() =>
+								setInputMode(false)
+							}
+						>
+							Cancel
+						</FlatButton>
 						<FlatButton
 							color="text-neutral-100"
 							bg="bg-neutral-800"
