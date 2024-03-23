@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import { ReactNode } from 'react'
 
 export interface RoundButtonProps {
-	children: ReactNode
+	children?: ReactNode
 	icon?: ReactNode
 }
 
