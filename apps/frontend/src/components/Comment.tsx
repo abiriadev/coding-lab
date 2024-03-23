@@ -4,6 +4,7 @@ import {
 	ThumbDownOutlined,
 	ThumbUpOutlined,
 } from '@mui/icons-material'
+import { VoteButton } from './VoteButton'
 
 export interface CommentProps {
 	content: string
@@ -45,20 +46,8 @@ export const Comment = ({
 					direction="row"
 					spacing={2}
 				>
-					<Button
-						color="inherit"
-						startIcon={<ThumbUpOutlined />}
-						className="hover:rounded-full"
-					>
-						{upvotes ?? 0}
-					</Button>
-					<Button
-						color="inherit"
-						startIcon={<ThumbDownOutlined />}
-						className="hover:rounded-full"
-					>
-						{downvotes ?? 0}
-					</Button>
+					<VoteButton count={upvotes} />
+					<VoteButton count={upvotes} down />
 				</Stack>
 			</div>
 		</div>
