@@ -12,7 +12,14 @@ export const CommentInput = () => {
 					<TextareaAutosize className="border-0 outline-0 text-lg mx-3 mt-3 mb-5" />
 					<div className="flex justify-end gap-2">
 						<FlatButton>Cancel</FlatButton>
-						<FlatButton>Submit</FlatButton>
+						<FlatButton
+							color="text-neutral-100"
+							bg="bg-neutral-800"
+							hover="bg-neutral-800"
+							active="bg-neutral-700"
+						>
+							Submit
+						</FlatButton>
 					</div>
 				</div>
 			) : (
