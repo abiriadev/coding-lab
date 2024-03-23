@@ -1,9 +1,13 @@
 import {
-	Unstable_Grid2 as Grid,
-	Button,
 	Stack,
+	MenuItem,
+	Menu,
+	IconButton,
+	Button,
 } from '@mui/material'
 import { Comment } from './Comment'
+import { useRef } from 'react'
+import { MoreHoriz } from '@mui/icons-material'
 
 export interface PostProps {
 	title: string
@@ -16,6 +20,8 @@ export const Post = ({
 	content,
 	comments,
 }: PostProps) => {
+	const moreBtn = useRef(null)
+
 	return (
 		<article>
 			<h1>{title}</h1>
@@ -29,6 +35,12 @@ export const Post = ({
 					<Comment content={comment} />
 				))}
 			</Stack>
+			<IconButton ref={moreBtn}>
+				<MoreHoriz />
+			</IconButton>
+			<Menu anchorEl={moreBtn.current} open={true}>
+				<MenuItem>A</MenuItem>
+			</Menu>
 		</article>
 	)
 }
