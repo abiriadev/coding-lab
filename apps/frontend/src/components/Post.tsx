@@ -4,10 +4,12 @@ import {
 	Menu,
 	IconButton,
 	Button,
+	Avatar,
 } from '@mui/material'
 import { Comment } from './Comment'
 import { useRef, useState } from 'react'
 import { MoreHoriz } from '@mui/icons-material'
+import { RelativeTimestamp } from './RelativeTimestamp'
 
 export interface PostProps {
 	title: string
@@ -26,6 +28,13 @@ export const Post = ({
 
 	return (
 		<article className="relative">
+			<div className="flex">
+				<Avatar></Avatar>
+				<div>
+					<div>Abiria</div>
+					<RelativeTimestamp time={new Date()} />
+				</div>
+			</div>
 			<h1>{title}</h1>
 			<main>{content}</main>
 			<div className="flex items-center justify-between">
