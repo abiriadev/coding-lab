@@ -5,6 +5,7 @@ import {
 	IconButton,
 	Button,
 	Avatar,
+	Divider,
 } from '@mui/material'
 import { Comment } from './Comment'
 import { useState } from 'react'
@@ -48,7 +49,7 @@ export const Post = ({
 				<span>{comments.length} comments</span>
 				<Button>Most voted</Button>
 			</div>
-			<Stack>
+			<Stack gap={1} divider={<Divider />}>
 				{comments.map(comment => (
 					<Comment content={comment} />
 				))}
