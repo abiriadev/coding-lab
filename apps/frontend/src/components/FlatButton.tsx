@@ -6,6 +6,7 @@ export interface FlatButtonProps {
 	bg?: string
 	hover?: string
 	active?: string
+	onClick?: () => void
 }
 
 export const FlatButton = ({
@@ -14,6 +15,7 @@ export const FlatButton = ({
 	bg,
 	hover,
 	active,
+	onClick,
 }: FlatButtonProps) => {
 	return (
 		<button
@@ -22,6 +24,7 @@ export const FlatButton = ({
 			} hover:${hover ?? 'bg-neutral-300 '} active:${
 				active ?? 'bg-neutral-400 '
 			}`}
+			onClick={onClick}
 		>
 			{children}
 		</button>
