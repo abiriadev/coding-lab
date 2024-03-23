@@ -67,23 +67,21 @@ export const PostPreview = ({
 				direction="row"
 				spacing={2}
 			>
-				<div>
-					<Button
-						color="inherit"
-						startIcon={<ThumbUpOutlined />}
-						className="hover:rounded-full"
-					>
-						{upvotes ?? 0}
-					</Button>
+				<Button
+					color="inherit"
+					startIcon={<ThumbUpOutlined />}
+					className="hover:rounded-full"
+				>
+					{upvotes ?? 0}
+				</Button>
 
-					<Button
-						color="inherit"
-						endIcon={<ThumbDownOutlined />}
-						className="hover:rounded-full"
-					>
-						{downvotes ?? 0}
-					</Button>
-				</div>
+				<Button
+					color="inherit"
+					startIcon={<ThumbDownOutlined />}
+					className="hover:rounded-full"
+				>
+					{downvotes ?? 0}
+				</Button>
 
 				<Button
 					color="inherit"
