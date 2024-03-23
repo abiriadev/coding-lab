@@ -3,9 +3,22 @@ import {
 	Typography,
 } from '@mui/material'
 
-export const AppBar = () => {
+export interface AppBarProps {
+	position?:
+		| 'fixed'
+		| 'absolute'
+		| 'sticky'
+		| 'static'
+		| 'relative'
+}
+
+export const AppBar = ({ position }: AppBarProps) => {
 	return (
-		<MuiAppBar color="inherit" className="p-3">
+		<MuiAppBar
+			position={position}
+			color="inherit"
+			className="p-3"
+		>
 			<Typography variant="h4" component="h1">
 				Coding Lab
 			</Typography>
