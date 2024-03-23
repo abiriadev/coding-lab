@@ -23,7 +23,7 @@ export const Post = ({
 	const moreBtn = useRef(null)
 
 	return (
-		<article>
+		<article className="relative">
 			<h1>{title}</h1>
 			<main>{content}</main>
 			<div className="flex items-center justify-between">
@@ -35,9 +35,11 @@ export const Post = ({
 					<Comment content={comment} />
 				))}
 			</Stack>
-			<IconButton ref={moreBtn}>
-				<MoreHoriz />
-			</IconButton>
+			<div className="absolute right-0 top-0">
+				<IconButton ref={moreBtn}>
+					<MoreHoriz />
+				</IconButton>
+			</div>
 			<Menu anchorEl={moreBtn.current} open={true}>
 				<MenuItem>A</MenuItem>
 			</Menu>
