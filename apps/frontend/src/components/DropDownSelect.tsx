@@ -3,28 +3,46 @@ import {
 	Select,
 	SelectChangeEvent,
 } from '@mui/material'
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 
-export const DropDownSelect = () => {
-	const [age, setAge] = useState('10')
+export interface DropDownSelectProps {
+	options: Array<{
+		icon: ReactNode
+		label: string
+		value: string
+	}>
+}
+
+export const DropDownSelect = ({
+	options,
+}: DropDownSelectProps) => {
+	const [value, setValue] = useState(options[0].value)
 
 	return (
 		<Select
-			value={age}
+			value={value}
 			onChange={({ target }: SelectChangeEvent) => {
-				setAge(target.value as string)
+				setValue(target.value as string)
 			}}
 			variant="standard"
 			disableUnderline
 			sx={{
 				'& .MuiSelect-standard': {
-					backgroundColor: 'inherit',
+					backgroundColor: 'inherit !important',
 				},
 			}}
 		>
-			<MenuItem value={10}>Ten</MenuItem>
-			<MenuItem value={20}>Twenty</MenuItem>
-			<MenuItem value={30}>Thirty</MenuItem>
+			{options.map(({ icon, label, value }) => (
+				<MenuItem value={value}>
+					<div
+						className="flex items-center"
+						style={{ gap: '10px' }}
+					>
+						{icon}
+						<span>{label}</span>
+					</div>
+				</MenuItem>
+			))}
 		</Select>
 	)
 }
