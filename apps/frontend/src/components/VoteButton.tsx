@@ -1,6 +1,27 @@
-import { ThumbUpOutlined } from '@mui/icons-material'
+import {
+	ThumbDownOutlined,
+	ThumbUpOutlined,
+} from '@mui/icons-material'
 import { RoundButton } from './RoundButton'
 
-export const VoteButton = () => (
-	<RoundButton icon={<ThumbUpOutlined />}>0</RoundButton>
+export interface VoteButtonProps {
+	down?: boolean
+	count?: number
+}
+
+export const VoteButton = ({
+	down,
+	count,
+}: VoteButtonProps) => (
+	<RoundButton
+		icon={
+			down ? (
+				<ThumbDownOutlined />
+			) : (
+				<ThumbUpOutlined />
+			)
+		}
+	>
+		{count ?? 0}
+	</RoundButton>
 )
