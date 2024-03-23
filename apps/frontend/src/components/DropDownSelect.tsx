@@ -11,18 +11,23 @@ export interface DropDownSelectProps {
 		label: string
 		value: string
 	}>
+	onChange?: (value: string) => void
 }
 
 export const DropDownSelect = ({
 	options,
+	onChange,
 }: DropDownSelectProps) => {
 	const [value, setValue] = useState(options[0].value)
 
 	return (
 		<Select
 			value={value}
-			onChange={({ target }: SelectChangeEvent) => {
-				setValue(target.value as string)
+			onChange={({
+				target: { value },
+			}: SelectChangeEvent) => {
+				setValue(value)
+				onChange?.(value)
 			}}
 			variant="standard"
 			disableUnderline
