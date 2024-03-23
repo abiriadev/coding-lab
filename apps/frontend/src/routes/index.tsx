@@ -11,6 +11,7 @@ import {
 	LocalFireDepartmentOutlined,
 	History,
 } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 import { data } from '@/data'
 
 export const IndexPage = () => {
@@ -64,11 +65,17 @@ export const IndexPage = () => {
 									title,
 									content,
 								}) => (
-									<PostPreview
-										key={id}
-										title={title}
-										content={content}
-									/>
+									<Link
+										to={`/posts/${id}`}
+									>
+										<PostPreview
+											key={id}
+											title={title}
+											content={
+												content
+											}
+										/>
+									</Link>
 								),
 							)}
 						</Stack>
