@@ -10,14 +10,15 @@ export const IndexPage = () => {
 	return (
 		<>
 			<header>
-				<AppBar></AppBar>
+				<AppBar position="sticky"></AppBar>
 			</header>
-			<Grid container spacing={2}>
-				<Grid xs></Grid>
-				<Grid xs={8}>
+			<Grid container spacing={2} className="m-0 p-0">
+				<Grid xs className="m-0 p-0"></Grid>
+				<Grid xs={8} className="m-0 p-0">
 					<main className="w-full">
 						<Stack
 							className="w-full"
+							gap={1}
 							divider={
 								<Divider
 									variant="fullWidth"
@@ -42,10 +43,25 @@ export const IndexPage = () => {
 								content="content"
 								stretch
 							/>
+							<PostPreview
+								title="Title"
+								content="content"
+								stretch
+							/>
+							<PostPreview
+								title="Title"
+								content="content"
+								stretch
+							/>
+							<PostPreview
+								title="Title"
+								content="content"
+								stretch
+							/>
 						</Stack>
 					</main>
 				</Grid>
-				<Grid xs></Grid>
+				<Grid xs className="m-0 p-0"></Grid>
 			</Grid>
 		</>
 	)
