@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { TextareaAutosize } from '@mui/material'
 
 export const CommentInput = () => {
 	const [inputMode, setInputMode] = useState(false)
@@ -6,7 +7,7 @@ export const CommentInput = () => {
 	return (
 		<div className="border border-solid rounded-[1.25em] p-3 border-neutral-400 focus-within:border-neutral-800">
 			{inputMode ? (
-				<textarea className="border-0 outline-0 text-sm"></textarea>
+				<TextareaAutosize className="border-0 outline-0 text-sm" />
 			) : (
 				<div onClick={() => setInputMode(true)}>
 					Add new comment...
