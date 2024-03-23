@@ -13,7 +13,7 @@ export const RoundButton = ({
 	<Button
 		color="inherit"
 		startIcon={icon}
-		className="rounded-full bg-neutral-200 px-4"
+		className="rounded-full bg-neutral-100 px-4"
 	>
 		{children}
 	</Button>
