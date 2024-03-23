@@ -4,9 +4,9 @@ import {
 	Unstable_Grid2 as Grid,
 	Divider,
 } from '@mui/material'
-import { PostPreview } from './components/PostPreview'
+import { PostPreview } from '../components/PostPreview'
 
-function App() {
+export const IndexPage = () => {
 	return (
 		<>
 			<header>
@@ -50,5 +50,3 @@ function App() {
 		</>
 	)
 }
-
-export default App

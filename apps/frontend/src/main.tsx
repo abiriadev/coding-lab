@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { StyledEngineProvider } from '@mui/material'
 import {
 	createBrowserRouter,
 	RouterProvider,
 } from 'react-router-dom'
-import { Page404 } from './404.tsx'
+import { Page404 } from './routes/404.tsx'
+import { IndexPage } from './routes/index.tsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <App />,
+		element: <IndexPage />,
 		errorElement: <Page404 />,
 	},
 ])
