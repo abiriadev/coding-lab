@@ -32,7 +32,7 @@ const PostInner = ({ id }: { id: string }) => {
 		<Post
 			title={post.title}
 			content={post.content}
-			author={post.author}
+			author={post.expand.author.username}
 			comments={[]}
 		/>
 	) : (
