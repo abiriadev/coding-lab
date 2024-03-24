@@ -79,12 +79,13 @@ const Posts = () => {
 
 	return success ? (
 		<List>
-			{posts.map(({ id, title, content }) => (
+			{posts.map(({ id, title, content, author }) => (
 				<Link key={id} to={`/posts/${id}`}>
 					<PostPreview
 						key={id}
 						title={title}
 						content={content}
+						author={author}
 					/>
 				</Link>
 			))}
