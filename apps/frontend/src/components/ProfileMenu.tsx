@@ -30,7 +30,7 @@ export const ProfileMenu = () => {
 					src={
 						user
 							? localStorage.getItem(
-									'avatar',
+									'avatarUrl',
 								) ?? undefined
 							: undefined
 					}
