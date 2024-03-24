@@ -30,13 +30,11 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
 	return skeleton ? (
 		<div className="flex flex-col">
-			<div className="flex">
+			<div className="flex gap-3">
 				<Skeleton variant="circular">
 					<Avatar />
 				</Skeleton>
-				<div>
-					<Skeleton />
-				</div>
+				<Skeleton className="w-1/3" />
 			</div>
 			<Skeleton className="mb-3 text-5xl w-4/5" />
 			<Skeleton variant="rounded" height="100px" />
