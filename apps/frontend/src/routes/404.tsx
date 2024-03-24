@@ -1,12 +1,13 @@
+import { ErrorUi } from '@/components/ErrorUi'
 import { useRouteError } from 'react-router-dom'
 
 export const Page404 = () => {
-	const error = useRouteError() as { message: string }
+	const error = useRouteError()
 
 	return (
-		<>
-			<h1>404</h1>
-			<p>{error.message}</p>
-		</>
+		<ErrorUi
+			message="Unexpected error occurred"
+			error={error}
+		/>
 	)
 }
