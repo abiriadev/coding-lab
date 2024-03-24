@@ -24,12 +24,6 @@ func init() {
 			settings.Meta.AppName = appName
 		}
 
-		if appUrl := os.Getenv("APP_URL"); appUrl == "" {
-			return errors.New("environment variable APP_URL is required")
-		} else {
-			settings.Meta.AppUrl = appUrl
-		}
-
 		settings.DiscordAuth.Enabled = true
 
 		if clientId := os.Getenv("DISCORD_OAUTH_CLIENT_ID"); clientId == "" {
