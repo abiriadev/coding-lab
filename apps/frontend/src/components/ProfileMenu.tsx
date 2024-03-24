@@ -17,7 +17,7 @@ export const ProfileMenu = () => {
 	const pfOpOpen = pfOp !== null
 	const closePfOp = () => setPfOp(null)
 
-	const username = loginData()?.username
+	const [user, setUser] = useState(loginData())
 
 	return (
 		<>
@@ -28,8 +28,11 @@ export const ProfileMenu = () => {
 			>
 				<Avatar
 					src={
-						username &&
-						localStorage.getItem('avatar')!
+						user
+							? localStorage.getItem(
+									'avatar',
+								) ?? undefined
+							: undefined
 					}
 				/>
 			</IconButton>
@@ -38,7 +41,7 @@ export const ProfileMenu = () => {
 				open={pfOpOpen}
 				onClose={closePfOp}
 			>
-				{username ? (
+				{user ? (
 					<MenuItem
 						onClick={() => {
 							closePfOp()
@@ -53,10 +56,11 @@ export const ProfileMenu = () => {
 					</MenuItem>
 				) : (
 					<MenuItem
-						onClick={() => {
+						onClick={async () => {
 							closePfOp()
 
-							login()
+							await login()
+							setUser(loginData())
 						}}
 					>
 						<ListItemIcon>
