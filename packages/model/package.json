@@ -2,7 +2,7 @@
 	"name": "model",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "./src/pocketbase-types.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"typegen": "pocketbase-typegen --db ../../apps/backend/pb_data/data.db --out src/pocketbase-types.ts"
