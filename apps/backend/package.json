@@ -1,0 +1,16 @@
+{
+	"name": "backend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"run": "gobot pocketbase --g-use-version 0.22.6 serve"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"gobot": "1.0.0-alpha.32"
+	}
+}
