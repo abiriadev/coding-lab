@@ -35,8 +35,8 @@ Provide the following environment variables:
 
 | Variable                      | Required | Description                                        |
 | ----------------------------- | -------- | -------------------------------------------------- |
-| `INIT_ADMIN_EMAIL`            | [x]      | The email address of the initial admin user        |
-| `INIT_ADMIN_PASSWORD`         | [x]      | The password of the initial admin user             |
-| `APP_NAME`                    | [ ]      | The name of the application                        |
-| `DISCORD_OAUTH_CLIENT_ID`     | [x]      | The client ID of the Discord OAuth application     |
-| `DISCORD_OAUTH_CLIENT_SECRET` | [x]      | The client secret of the Discord OAuth application |
+| `INIT_ADMIN_EMAIL`            | `true`   | The email address of the initial admin user        |
+| `INIT_ADMIN_PASSWORD`         | `true`   | The password of the initial admin user             |
+| `APP_NAME`                    | `false`  | The name of the application                        |
+| `DISCORD_OAUTH_CLIENT_ID`     | `true`   | The client ID of the Discord OAuth application     |
+| `DISCORD_OAUTH_CLIENT_SECRET` | `true`   | The client secret of the Discord OAuth application |
