@@ -13,6 +13,7 @@ import { FaDiscord, FaGithub } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { login } from '@/api'
 
 export interface AppBarProps {
 	position?:
@@ -28,7 +29,7 @@ export const AppBar = ({ position }: AppBarProps) => {
 		null,
 	)
 	const pfOpOpen = pfOp !== null
-	const closeMore = v => setPfOp(null)
+	const closePfOp = () => setPfOp(null)
 
 	return (
 		<MuiAppBar
@@ -79,9 +80,15 @@ export const AppBar = ({ position }: AppBarProps) => {
 				<Menu
 					anchorEl={pfOp}
 					open={pfOpOpen}
-					onClose={closeMore}
+					onClose={closePfOp}
 				>
-					<MenuItem onClick={closeMore}>
+					<MenuItem
+						onClick={() => {
+							closePfOp()
+
+							login()
+						}}
+					>
 						<ListItemIcon>
 							<Login />
 						</ListItemIcon>
