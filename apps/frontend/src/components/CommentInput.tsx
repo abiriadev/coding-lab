@@ -36,12 +36,7 @@ export const CommentInput = ({
 						>
 							Cancel
 						</FlatButton>
-						<FlatButton
-							color="text-neutral-100"
-							bg="bg-neutral-800"
-							hover="bg-neutral-800"
-							active="bg-neutral-700"
-						>
+						<FlatButton className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700">
 							Submit
 						</FlatButton>
 					</div>
