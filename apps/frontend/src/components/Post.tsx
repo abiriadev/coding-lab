@@ -18,6 +18,7 @@ import { CommentInput } from './CommentInput'
 export interface PostProps {
 	title: string
 	content: string
+	author?: string
 	upvotes?: number
 	downvotes?: number
 	comments: string[]
@@ -26,6 +27,7 @@ export interface PostProps {
 export const Post = ({
 	title,
 	content,
+	author,
 	upvotes,
 	downvotes,
 	comments,
@@ -36,7 +38,7 @@ export const Post = ({
 				<Avatar></Avatar>
 				<div className="text-12">
 					<div className="font-bold hover:underline">
-						Author
+						{author ?? 'Author'}
 					</div>
 					<RelativeTimestamp time={new Date()} />
 				</div>
