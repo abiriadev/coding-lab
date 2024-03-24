@@ -30,15 +30,7 @@ export const ProfileMenu = () => {
 					setPfOp(currentTarget)
 				}
 			>
-				<Avatar
-					src={
-						user
-							? localStorage.getItem(
-									'avatarUrl',
-								) ?? undefined
-							: undefined
-					}
-				/>
+				<Avatar src={user?.avatar} />
 			</IconButton>
 			<Menu
 				anchorEl={pfOp}

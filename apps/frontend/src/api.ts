@@ -35,14 +35,9 @@ export const createPost = async ({
 }
 
 export const login = async () => {
-	const authData = await pb
+	await pb
 		.collection('users')
 		.authWithOAuth2({ provider: 'discord' })
-
-	localStorage.setItem(
-		'avatarUrl',
-		authData.meta?.avatarUrl,
-	)
 }
 
 export const logout = () => pb.authStore.clear()
