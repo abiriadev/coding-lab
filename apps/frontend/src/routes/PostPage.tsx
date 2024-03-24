@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import { promise2resource } from '@/utils/promise2resource'
 import { getPost } from '@/api'
 import { ErrorUi } from '@components/ErrorUi'
+import { PostSkeleton } from '@/components/PostSkeleton'
 
 let cache: Record<string, () => Promise<any>> = {}
 
@@ -17,7 +18,7 @@ export const PostPage = () => {
 	return (
 		<Layout>
 			<div className="h-10"></div>
-			<Suspense fallback="loading">
+			<Suspense fallback={<PostSkeleton />}>
 				<PostInner id={id} />
 			</Suspense>
 		</Layout>

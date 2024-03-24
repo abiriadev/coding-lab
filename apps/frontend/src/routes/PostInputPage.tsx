@@ -3,6 +3,7 @@ import { Layout } from './Layout'
 import { createPost } from '@/api'
 import { ErrorUi } from '@/components/ErrorUi'
 import { useState } from 'react'
+import { redirect } from 'react-router-dom'
 
 export const PostInputPage = () => {
 	const [err, setErr] = useState(null)
@@ -20,7 +21,9 @@ export const PostInputPage = () => {
 				<PostInput
 					onSubmit={async d => {
 						try {
-							await createPost(d)
+							const id = await createPost(d)
+
+							redirect(`/posts/${id}`)
 						} catch (e) {
 							setErr(e as any)
 						}
