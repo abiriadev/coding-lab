@@ -79,7 +79,7 @@ const Posts = () => {
 	return success ? (
 		<>
 			{posts.map(({ id, title, content }) => (
-				<Link to={`/posts/${id}`}>
+				<Link key={id} to={`/posts/${id}`}>
 					<PostPreview
 						key={id}
 						title={title}
