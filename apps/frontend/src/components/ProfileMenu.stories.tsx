@@ -15,4 +15,11 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
 	args: {},
+	decorators: [
+		S => (
+			<div className="w-[32rem]">
+				<S />
+			</div>
+		),
+	],
 }
