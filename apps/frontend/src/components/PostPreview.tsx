@@ -71,7 +71,7 @@ export const PostPreview = ({
 				spacing={2}
 			>
 				<VoteButton count={upvotes} />
-				<VoteButton count={upvotes} down />
+				<VoteButton count={downvotes} down />
 				<CommentsButton count={commentsCount} />
 				<ShareButton />
 			</Stack>
