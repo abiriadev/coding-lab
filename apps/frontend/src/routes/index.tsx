@@ -80,24 +80,33 @@ const Posts = () => {
 
 	return success ? (
 		<List>
-			{posts.map(({ id, title, content, expand }) => (
-				<Link key={id} to={`/posts/${id}`}>
-					<PostPreview
-						key={id}
-						title={title}
-						content={content}
-						author={
-							(
-								expand as {
-									author: {
-										username: string
+			{posts.map(
+				({
+					id,
+					title,
+					content,
+					created,
+					expand,
+				}) => (
+					<Link key={id} to={`/posts/${id}`}>
+						<PostPreview
+							key={id}
+							title={title}
+							content={content}
+							author={
+								(
+									expand as {
+										author: {
+											username: string
+										}
 									}
-								}
-							).author.username
-						}
-					/>
-				</Link>
-			))}
+								).author.username
+							}
+							postedAt={new Date(created)}
+						/>
+					</Link>
+				),
+			)}
 		</List>
 	) : (
 		<ErrorUi
