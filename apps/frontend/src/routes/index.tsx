@@ -12,7 +12,9 @@ import {
 	History,
 } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-import { data } from '@/data'
+import { Suspense } from 'react'
+import { promise2resource } from '@/utils/promise2resource'
+import { getPosts } from '@/api'
 
 export const IndexPage = () => {
 	return (
@@ -59,30 +61,34 @@ export const IndexPage = () => {
 								/>
 							}
 						>
-							{data.posts.map(
-								({
-									id,
-									title,
-									content,
-								}) => (
-									<Link
-										to={`/posts/${id}`}
-									>
-										<PostPreview
-											key={id}
-											title={title}
-											content={
-												content
-											}
-										/>
-									</Link>
-								),
-							)}
+							<Suspense fallback="loading...">
+								<Posts />
+							</Suspense>
 						</Stack>
 					</main>
 				</Grid>
 				<Grid xs className="m-0 p-0"></Grid>
 			</Grid>
 		</>
+	)
+}
+
+const Posts = () => {
+	const [success, posts] = promise2resource(getPosts)
+
+	return success ? (
+		<>
+			{posts.map(({ id, title, content }) => (
+				<Link to={`/posts/${id}`}>
+					<PostPreview
+						key={id}
+						title={title}
+						content={content}
+					/>
+				</Link>
+			))}
+		</>
+	) : (
+		'error'
 	)
 }
