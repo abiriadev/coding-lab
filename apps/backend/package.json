@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"run": "gobot pocketbase --g-use-version 0.22.6 serve"
+		"build": "CGO_ENABLED=0 go build",
+		"run": "go run .",
+		"run:pure": "gobot pocketbase --g-use-version 0.22.6 serve"
 	},
 	"keywords": [],
 	"author": "",
