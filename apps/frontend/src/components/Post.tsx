@@ -16,6 +16,7 @@ import { MoreOptions } from './MoreOptions'
 import { CommentInput } from './CommentInput'
 
 export interface PostProps {
+	id?: string
 	title: string
 	content: string
 	author?: string
@@ -26,6 +27,7 @@ export interface PostProps {
 }
 
 export const Post = ({
+	id,
 	title,
 	content,
 	author,
