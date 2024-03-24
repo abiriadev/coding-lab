@@ -16,6 +16,7 @@ import { ReactNode, Suspense } from 'react'
 import { promise2resource } from '@/utils/promise2resource'
 import { getPosts } from '@/api'
 import { ErrorUi } from '@/components/ErrorUi'
+import { PostsResponse } from 'model'
 
 export const IndexPage = () => {
 	return (
@@ -79,13 +80,13 @@ const Posts = () => {
 
 	return success ? (
 		<List>
-			{posts.map(({ id, title, content, author }) => (
+			{posts.map(({ id, title, content, expand }) => (
 				<Link key={id} to={`/posts/${id}`}>
 					<PostPreview
 						key={id}
 						title={title}
 						content={content}
-						author={author}
+						author={expand.author.username}
 					/>
 				</Link>
 			))}
