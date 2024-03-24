@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 import { Suspense } from 'react'
 import { promise2resource } from '@/utils/promise2resource'
 import { getPosts } from '@/api'
+import { ErrorUi } from '@/components/ErrorUi'
 
 export const IndexPage = () => {
 	return (
@@ -89,6 +90,9 @@ const Posts = () => {
 			))}
 		</>
 	) : (
-		'error'
+		<ErrorUi
+			message="Failed to fetch posts"
+			error={posts}
+		/>
 	)
 }
