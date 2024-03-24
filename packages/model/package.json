@@ -12,5 +12,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"pocketbase-typegen": "^1.2.1"
+	},
+	"dependencies": {
+		"pocketbase": "^0.21.1"
 	}
 }

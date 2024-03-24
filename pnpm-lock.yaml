@@ -127,6 +127,10 @@ importers:
         version: 5.1.5
 
   packages/model:
+    dependencies:
+      pocketbase:
+        specifier: ^0.21.1
+        version: 0.21.1
     devDependencies:
       pocketbase-typegen:
         specifier: ^1.2.1
