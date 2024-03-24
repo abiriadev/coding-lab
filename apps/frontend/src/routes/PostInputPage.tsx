@@ -5,7 +5,11 @@ export const PostInputPage = () => {
 	return (
 		<Layout>
 			<div className="h-10"></div>
-			<PostInput />
+			<PostInput
+				onSubmit={d => {
+					console.log(d)
+				}}
+			/>
 		</Layout>
 	)
 }
