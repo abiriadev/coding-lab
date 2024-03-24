@@ -10,6 +10,8 @@ import (
 	"github.com/pocketbase/pocketbase/core"
 	"github.com/pocketbase/pocketbase/forms"
 	"github.com/pocketbase/pocketbase/plugins/migratecmd"
+
+	_ "github.com/abiriadev/coding-lab/apps/backend/migrations"
 )
 
 func main() {
