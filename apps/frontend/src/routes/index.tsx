@@ -97,9 +97,20 @@ const Posts = () => {
 									expand as {
 										author: {
 											username: string
+											avatar?: string
 										}
 									}
 								)?.author?.username
+							}
+							avatar={
+								(
+									expand as {
+										author: {
+											username: string
+											avatar?: string
+										}
+									}
+								)?.author?.avatar
 							}
 							postedAt={new Date(created)}
 						/>
