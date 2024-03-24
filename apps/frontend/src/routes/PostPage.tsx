@@ -30,6 +30,7 @@ const PostInner = ({ id }: { id: string }) => {
 
 	return ok ? (
 		<Post
+			id={post.id}
 			title={post.title}
 			content={post.content}
 			author={post.expand.author.username}
