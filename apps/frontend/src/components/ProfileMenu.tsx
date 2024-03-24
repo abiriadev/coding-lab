@@ -47,10 +47,13 @@ export const ProfileMenu = () => {
 			>
 				{user ? (
 					[
-						<MenuItem>
+						<MenuItem key={1}>
 							{user.username}
 						</MenuItem>,
-						<MenuItem onClick={closePfOp}>
+						<MenuItem
+							key={2}
+							onClick={closePfOp}
+						>
 							<ListItemIcon>
 								<Settings />
 							</ListItemIcon>
@@ -59,6 +62,7 @@ export const ProfileMenu = () => {
 							</ListItemText>
 						</MenuItem>,
 						<MenuItem
+							key={3}
 							onClick={() => {
 								closePfOp()
 
