@@ -1,4 +1,4 @@
-import { DarkMode, Add, Login } from '@mui/icons-material'
+import { DarkMode, Add } from '@mui/icons-material'
 import {
 	IconButton,
 	AppBar as MuiAppBar,

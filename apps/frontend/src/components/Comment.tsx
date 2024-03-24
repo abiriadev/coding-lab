@@ -1,9 +1,5 @@
-import { Avatar, Button, Stack } from '@mui/material'
+import { Avatar, Stack } from '@mui/material'
 import { RelativeTimestamp } from './RelativeTimestamp'
-import {
-	ThumbDownOutlined,
-	ThumbUpOutlined,
-} from '@mui/icons-material'
 import { VoteButton } from './VoteButton'
 
 export interface CommentProps {
@@ -47,7 +43,7 @@ export const Comment = ({
 					spacing={2}
 				>
 					<VoteButton count={upvotes} />
-					<VoteButton count={upvotes} down />
+					<VoteButton count={downvotes} down />
 				</Stack>
 			</div>
 		</div>
