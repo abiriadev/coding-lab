@@ -2,7 +2,7 @@ const cache = new Map<() => Promise<any>, [boolean, any]>()
 
 export const promise2resource = <T>(
 	promiseFactory: () => Promise<T>,
-): [boolean, T] => {
+): [true, T] | [false, unknown] => {
 	const cached = cache.get(promiseFactory)
 	if (cached !== undefined) return cached
 
