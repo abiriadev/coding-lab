@@ -1,4 +1,8 @@
-import { Login, Logout } from '@mui/icons-material'
+import {
+	Login,
+	Logout,
+	Settings,
+} from '@mui/icons-material'
 import {
 	Avatar,
 	IconButton,
@@ -44,6 +48,14 @@ export const ProfileMenu = () => {
 				{user ? (
 					<>
 						<MenuItem>{user.username}</MenuItem>
+						<MenuItem onClick={closePfOp}>
+							<ListItemIcon>
+								<Settings />
+							</ListItemIcon>
+							<ListItemText>
+								Settings
+							</ListItemText>
+						</MenuItem>
 						<MenuItem
 							onClick={() => {
 								closePfOp()
