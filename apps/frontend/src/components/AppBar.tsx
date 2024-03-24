@@ -37,7 +37,10 @@ export const AppBar = ({ position }: AppBarProps) => {
 			className="p-4 shadow-none border-0 border-b-2 border-[#0000001f] border-solid"
 		>
 			<header className="flex justify-start items-center gap-3">
-				<h1 className="m-0 mr-auto">Coding Lab</h1>
+				<h1 className="m-0 mr-auto">
+					<Link to="/">Coding Lab</Link>
+				</h1>
+
 				<IconContext.Provider
 					value={{
 						color: 'gray',
