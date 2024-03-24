@@ -1,19 +1,13 @@
 import { DarkMode, Add, Login } from '@mui/icons-material'
 import {
-	Avatar,
 	IconButton,
-	ListItemIcon,
-	ListItemText,
-	Menu,
-	MenuItem,
 	AppBar as MuiAppBar,
 } from '@mui/material'
 import { RoundButton } from './RoundButton'
 import { FaDiscord, FaGithub } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { login } from '@/api'
+import { ProfileMenu } from './ProfileMenu'
 
 export interface AppBarProps {
 	position?:
@@ -25,12 +19,6 @@ export interface AppBarProps {
 }
 
 export const AppBar = ({ position }: AppBarProps) => {
-	const [pfOp, setPfOp] = useState<null | HTMLElement>(
-		null,
-	)
-	const pfOpOpen = pfOp !== null
-	const closePfOp = () => setPfOp(null)
-
 	return (
 		<MuiAppBar
 			position={position}
@@ -70,31 +58,7 @@ export const AppBar = ({ position }: AppBarProps) => {
 						Post
 					</RoundButton>
 				</Link>
-				<IconButton
-					onClick={({ currentTarget }) =>
-						setPfOp(currentTarget)
-					}
-				>
-					<Avatar></Avatar>
-				</IconButton>
-				<Menu
-					anchorEl={pfOp}
-					open={pfOpOpen}
-					onClose={closePfOp}
-				>
-					<MenuItem
-						onClick={() => {
-							closePfOp()
-
-							login()
-						}}
-					>
-						<ListItemIcon>
-							<Login />
-						</ListItemIcon>
-						<ListItemText>Login</ListItemText>
-					</MenuItem>
-				</Menu>
+				<ProfileMenu />
 			</header>
 		</MuiAppBar>
 	)
