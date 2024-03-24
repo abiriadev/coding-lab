@@ -36,8 +36,15 @@ export const Author: Story = {
 	},
 }
 
-export const Stretch: Story = {
+export const Skeleton: Story = {
 	args: {
-		stretch: true,
+		skeleton: true,
 	},
+	decorators: [
+		S => (
+			<div className="w-[32rem]">
+				<S />
+			</div>
+		),
+	],
 }
