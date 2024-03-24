@@ -63,7 +63,6 @@ export type PostsRecord = {
 
 export type UsersRecord = {
 	avatar?: string
-	name?: string
 }
 
 // Response types include system fields and match responses from the PocketBase API
