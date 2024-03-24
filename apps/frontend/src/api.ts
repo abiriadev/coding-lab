@@ -8,6 +8,7 @@ const pb = new PocketBase(
 export const getPosts = async () => {
 	return await pb.collection('posts').getFullList({
 		expand: 'author',
+		sort: '-created',
 	})
 }
 
