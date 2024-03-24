@@ -12,7 +12,7 @@ import {
 	History,
 } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-import { Suspense } from 'react'
+import { ReactNode, Suspense } from 'react'
 import { promise2resource } from '@/utils/promise2resource'
 import { getPosts } from '@/api'
 import { ErrorUi } from '@/components/ErrorUi'
@@ -50,22 +50,22 @@ export const IndexPage = () => {
 								]}
 							/>
 						</div>
-						<Stack
-							className="w-full"
-							gap={1}
-							divider={
-								<Divider
-									variant="fullWidth"
-									sx={{
-										borderBottomWidth: 2,
-									}}
-								/>
+						<Suspense
+							fallback={
+								<List>
+									{Array(5)
+										.fill(0)
+										.map((_, i) => (
+											<PostPreview
+												key={i}
+												skeleton
+											/>
+										))}
+								</List>
 							}
 						>
-							<Suspense fallback="loading...">
-								<Posts />
-							</Suspense>
-						</Stack>
+							<Posts />
+						</Suspense>
 					</main>
 				</Grid>
 				<Grid xs className="m-0 p-0"></Grid>
@@ -78,7 +78,7 @@ const Posts = () => {
 	const [success, posts] = promise2resource(getPosts)
 
 	return success ? (
-		<>
+		<List>
 			{posts.map(({ id, title, content }) => (
 				<Link key={id} to={`/posts/${id}`}>
 					<PostPreview
@@ -88,7 +88,7 @@ const Posts = () => {
 					/>
 				</Link>
 			))}
-		</>
+		</List>
 	) : (
 		<ErrorUi
 			message="Failed to fetch posts"
@@ -96,3 +96,20 @@ const Posts = () => {
 		/>
 	)
 }
+
+const List = ({ children }: { children: ReactNode }) => (
+	<Stack
+		className="w-full"
+		gap={1}
+		divider={
+			<Divider
+				variant="fullWidth"
+				sx={{
+					borderBottomWidth: 2,
+				}}
+			/>
+		}
+	>
+		{children}
+	</Stack>
+)
