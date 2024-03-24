@@ -16,4 +16,4 @@ WORKDIR /app
 
 COPY --from=builder /app/backend ./
 
-ENTRYPOINT ["/app/backend", "serve"]
+ENTRYPOINT ["/app/backend", "serve", "--http", "0.0.0.0:8090"]
