@@ -10,7 +10,9 @@ export const getPosts = async () => {
 }
 
 export const getPost = async (id: string) => {
-	return await pb.collection('posts').getOne(id)
+	return await pb.collection('posts').getOne(id, {
+		expand: 'author',
+	})
 }
 
 export const createPost = async ({
