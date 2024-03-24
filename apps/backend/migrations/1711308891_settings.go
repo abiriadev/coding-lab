@@ -18,24 +18,22 @@ func init() {
 			return err
 		}
 
-		if appName := os.Getenv("APP_NAME"); appName == "" {
-			return errors.New("environment variable APP_NAME is required")
-		} else {
+		if appName := os.Getenv("APP_NAME"); appName != "" {
 			settings.Meta.AppName = appName
 		}
 
 		settings.DiscordAuth.Enabled = true
 
-		if clientId := os.Getenv("DISCORD_OAUTH_CLIENT_ID"); clientId == "" {
-			return errors.New("environment variable DISCORD_OAUTH_CLIENT_ID is required")
-		} else {
+		if clientId := os.Getenv("DISCORD_OAUTH_CLIENT_ID"); clientId != "" {
 			settings.DiscordAuth.ClientId = clientId
+		} else {
+			return errors.New("environment variable DISCORD_OAUTH_CLIENT_ID is required")
 		}
 
-		if clientSecret := os.Getenv("DISCORD_OAUTH_CLIENT_SECRET"); clientSecret == "" {
-			return errors.New("environment variable DISCORD_OAUTH_CLIENT_SECRET is required")
-		} else {
+		if clientSecret := os.Getenv("DISCORD_OAUTH_CLIENT_SECRET"); clientSecret != "" {
 			settings.DiscordAuth.ClientSecret = clientSecret
+		} else {
+			return errors.New("environment variable DISCORD_OAUTH_CLIENT_SECRET is required")
 		}
 
 		if err := dao.SaveSettings(settings); err != nil {
