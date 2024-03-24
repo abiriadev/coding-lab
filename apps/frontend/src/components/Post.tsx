@@ -19,6 +19,7 @@ export interface PostProps {
 	title: string
 	content: string
 	author?: string
+	postedAt: Date
 	upvotes?: number
 	downvotes?: number
 	comments: string[]
@@ -28,6 +29,7 @@ export const Post = ({
 	title,
 	content,
 	author,
+	postedAt,
 	upvotes,
 	downvotes,
 	comments,
@@ -40,7 +42,9 @@ export const Post = ({
 					<div className="font-bold hover:underline">
 						{author ?? 'Author'}
 					</div>
-					<RelativeTimestamp time={new Date()} />
+					<RelativeTimestamp
+						time={postedAt ?? new Date()}
+					/>
 				</div>
 			</div>
 			<h1 className="text-2xl font-semibold mt-1 mb-3">
