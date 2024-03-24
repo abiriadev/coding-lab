@@ -20,6 +20,7 @@ export interface PostProps {
 	title: string
 	content: string
 	author?: string
+	avatar?: string
 	postedAt?: Date
 	upvotes?: number
 	downvotes?: number
@@ -31,6 +32,7 @@ export const Post = ({
 	title,
 	content,
 	author,
+	avatar,
 	postedAt,
 	upvotes,
 	downvotes,
@@ -39,7 +41,7 @@ export const Post = ({
 	return (
 		<article className="relative">
 			<div className="flex gap-3">
-				<Avatar></Avatar>
+				<Avatar src={avatar} />
 				<div className="text-12">
 					<div className="font-bold hover:underline">
 						{author ?? 'Author'}
