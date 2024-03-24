@@ -5,8 +5,8 @@ import { CommentsButton } from './CommentsButton'
 import { ShareButton } from './ShareButton'
 
 export interface PostPreviewProps {
-	title: string
-	content: string
+	title?: string
+	content?: string
 	author?: string
 	avatar?: string
 	postedAt?: Date
@@ -64,9 +64,9 @@ export const PostPreview = ({
 				/>
 			</Stack>
 			<h2 className="text-2xl font-bold mb-1">
-				{title}
+				{title ?? 'Title'}
 			</h2>
-			<p>{content}</p>
+			<p>{content ?? 'Content'}</p>
 			<Stack
 				className="mt-1"
 				direction="row"
