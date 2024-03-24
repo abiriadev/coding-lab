@@ -99,7 +99,7 @@ const Posts = () => {
 											username: string
 										}
 									}
-								).author.username
+								)?.author?.username
 							}
 							postedAt={new Date(created)}
 						/>
