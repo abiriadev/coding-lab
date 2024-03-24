@@ -1,4 +1,5 @@
-import { Error } from '@mui/icons-material'
+import { Error, ArrowOutward } from '@mui/icons-material'
+import { Button } from '@mui/material'
 
 export interface ErrorUiProps {
 	message?: string
@@ -20,6 +21,16 @@ export const ErrorUi = ({
 					{error.toString()}
 				</p>
 			) : null}
+			<Button
+				className="mt-4"
+				variant="outlined"
+				sx={{ textTransform: 'none' }}
+				endIcon={<ArrowOutward />}
+			>
+				<a href="https://github.com/abiriadev/coding-lab/issues/new">
+					Open an issue
+				</a>
+			</Button>
 		</div>
 	)
 }
