@@ -16,7 +16,6 @@ import { ReactNode, Suspense } from 'react'
 import { promise2resource } from '@/utils/promise2resource'
 import { getPosts } from '@/api'
 import { ErrorUi } from '@/components/ErrorUi'
-import { PostsResponse } from 'model'
 
 export const IndexPage = () => {
 	return (

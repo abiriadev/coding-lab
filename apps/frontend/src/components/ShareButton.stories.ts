@@ -8,9 +8,6 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	args: {
-		count: 123,
-	},
 } satisfies Meta<typeof ShareButton>
 
 export default meta
