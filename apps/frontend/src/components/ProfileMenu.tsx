@@ -1,4 +1,4 @@
-import { Login } from '@mui/icons-material'
+import { Login, Logout } from '@mui/icons-material'
 import {
 	Avatar,
 	IconButton,
@@ -7,7 +7,7 @@ import {
 	Menu,
 	MenuItem,
 } from '@mui/material'
-import { login } from '@/api'
+import { login, loginData, logout } from '@/api'
 import { useState } from 'react'
 
 export const ProfileMenu = () => {
@@ -16,6 +16,8 @@ export const ProfileMenu = () => {
 	)
 	const pfOpOpen = pfOp !== null
 	const closePfOp = () => setPfOp(null)
+
+	const username = loginData()?.username
 
 	return (
 		<>
@@ -31,18 +33,33 @@ export const ProfileMenu = () => {
 				open={pfOpOpen}
 				onClose={closePfOp}
 			>
-				<MenuItem
-					onClick={() => {
-						closePfOp()
+				{username ? (
+					<MenuItem
+						onClick={() => {
+							closePfOp()
 
-						login()
-					}}
-				>
-					<ListItemIcon>
-						<Login />
-					</ListItemIcon>
-					<ListItemText>Login</ListItemText>
-				</MenuItem>
+							logout()
+						}}
+					>
+						<ListItemIcon>
+							<Logout />
+						</ListItemIcon>
+						<ListItemText>Logout</ListItemText>
+					</MenuItem>
+				) : (
+					<MenuItem
+						onClick={() => {
+							closePfOp()
+
+							login()
+						}}
+					>
+						<ListItemIcon>
+							<Login />
+						</ListItemIcon>
+						<ListItemText>Login</ListItemText>
+					</MenuItem>
+				)}
 			</Menu>
 		</>
 	)
