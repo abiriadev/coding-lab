@@ -2,6 +2,15 @@ import { TextareaAutosize } from '@mui/material'
 import { FlatButton } from './FlatButton'
 import { Link } from 'react-router-dom'
 
+export interface PostInputSubmitData {
+	title: string
+	content: string
+}
+
+export interface PostInputProps {
+	onSubmit?: (_: PostInputSubmitData) => void
+}
+
 export const PostInput = () => {
 	return (
 		<div className="flex flex-col gap-3">
@@ -11,7 +20,12 @@ export const PostInput = () => {
 				<Link to="/">
 					<FlatButton>Cancel</FlatButton>
 				</Link>
-				<FlatButton className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700">
+				<FlatButton
+					className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700"
+					onClick={() => {
+						onSubmit()
+					}}
+				>
 					Submit
 				</FlatButton>
 			</div>
