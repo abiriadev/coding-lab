@@ -86,7 +86,15 @@ const Posts = () => {
 						key={id}
 						title={title}
 						content={content}
-						author={expand.author.username}
+						author={
+							(
+								expand as {
+									author: {
+										username: string
+									}
+								}
+							).author.username
+						}
 					/>
 				</Link>
 			))}
