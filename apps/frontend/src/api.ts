@@ -20,11 +20,13 @@ export const createPost = async ({
 	title: string
 	content: string
 }) => {
-	await pb.collection('posts').create({
+	const { id } = await pb.collection('posts').create({
 		author: pb.authStore.model?.id,
 		title,
 		content,
 	})
+
+	return id
 }
 
 export const login = async () => {
