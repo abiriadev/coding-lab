@@ -33,6 +33,7 @@ const PostInner = ({ id }: { id: string }) => {
 			title={post.title}
 			content={post.content}
 			author={post.expand.author.username}
+			postedAt={new Date(post.created)}
 			comments={[]}
 		/>
 	) : (
