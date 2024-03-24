@@ -34,3 +34,5 @@ export const login = async () => {
 }
 
 export const logout = () => pb.authStore.clear()
+
+export const loginData = () => pb.authStore.model
