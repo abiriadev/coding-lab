@@ -30,6 +30,10 @@ export const ShareButton = ({ id }: ShareButtonProps) => {
 				open={show}
 				autoHideDuration={500}
 				onClose={() => setShow(false)}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'center',
+				}}
 				message="Link copied!"
 			/>
 		</RoundButton>
