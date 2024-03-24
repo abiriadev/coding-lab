@@ -15,7 +15,11 @@ export const ErrorUi = ({
 			<p className="mt-2 mb-0 text-xl font-bold">
 				{message ?? 'Error'}
 			</p>
-			{error ? <p>{error.toString()}</p> : null}
+			{error ? (
+				<p className="mt-2 mb-0 text-neutral-400">
+					{error.toString()}
+				</p>
+			) : null}
 		</div>
 	)
 }

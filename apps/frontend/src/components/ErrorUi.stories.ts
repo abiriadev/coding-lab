@@ -14,5 +14,16 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-	args: {},
+	args: {
+		message: 'Failed to fetch data',
+	},
+}
+
+export const Details: Story = {
+	args: {
+		message: 'Reading undefined property',
+		error: new TypeError(
+			'can not read property "foo" of undefined',
+		),
+	},
 }
