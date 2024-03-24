@@ -12,6 +12,7 @@ import { RoundButton } from './RoundButton'
 import { FaDiscord, FaGithub } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export interface AppBarProps {
 	position?:
@@ -60,9 +61,11 @@ export const AppBar = ({ position }: AppBarProps) => {
 				<IconButton>
 					<DarkMode fontSize="large" />
 				</IconButton>
-				<RoundButton icon={<Add />}>
-					Post
-				</RoundButton>
+				<Link to="/new">
+					<RoundButton icon={<Add />}>
+						Post
+					</RoundButton>
+				</Link>
 				<IconButton
 					onClick={({ currentTarget }) =>
 						setPfOp(currentTarget)
