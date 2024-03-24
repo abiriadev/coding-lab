@@ -1,7 +1,7 @@
 import { Page404 } from './routes/404.tsx'
 import { IndexPage } from './routes/index.tsx'
 import { createBrowserRouter } from 'react-router-dom'
-import { PostPage } from './routes/post.tsx'
+import { PostPage } from './routes/PostPage'
 import { PostInputPage } from './routes/PostInputPage.tsx'
 
 export const router = createBrowserRouter([
