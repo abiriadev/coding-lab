@@ -8,3 +8,16 @@ const pb = new PocketBase(
 export const getPosts = async () => {
 	return await pb.collection('posts').getFullList()
 }
+
+export const createPost = async ({
+	title,
+	content,
+}: {
+	title: string
+	content: string
+}) => {
+	await pb.collection('posts').create({
+		title,
+		content,
+	})
+}
