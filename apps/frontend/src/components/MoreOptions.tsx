@@ -21,7 +21,7 @@ export const MoreOptions = ({
 	const [moreBtn, setMoreBtn] =
 		useState<null | HTMLElement>(null)
 	const moreOpen = moreBtn !== null
-	const closeMore = v => setMoreBtn(null)
+	const closeMore = _ => setMoreBtn(null)
 
 	return (
 		<>

@@ -20,7 +20,7 @@ export interface PostProps {
 	title: string
 	content: string
 	author?: string
-	postedAt: Date
+	postedAt?: Date
 	upvotes?: number
 	downvotes?: number
 	comments: string[]
