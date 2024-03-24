@@ -28,6 +28,9 @@ importers:
       model:
         specifier: workspace:^
         version: link:../../packages/model
+      pocketbase:
+        specifier: ^0.21.1
+        version: 0.21.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -7551,6 +7554,10 @@ packages:
       - encoding
       - supports-color
     dev: true
+
+  /pocketbase@0.21.1:
+    resolution: {integrity: sha512-0PvCP4pKtxsV9kwldEGyibEvhwOcx9jSCrz3WN5CgPILJfM0z76f1op9WE8/8UgikDsMdRsc5iBLfKintrJS1g==}
+    dev: false
 
   /polished@4.3.1:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}

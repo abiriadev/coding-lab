@@ -18,6 +18,7 @@
     "@mui/material": "^5.15.13",
     "date-fns": "^3.6.0",
     "model": "workspace:^",
+    "pocketbase": "^0.21.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
