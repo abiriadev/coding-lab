@@ -46,8 +46,10 @@ export const ProfileMenu = () => {
 				onClose={closePfOp}
 			>
 				{user ? (
-					<>
-						<MenuItem>{user.username}</MenuItem>
+					[
+						<MenuItem>
+							{user.username}
+						</MenuItem>,
 						<MenuItem onClick={closePfOp}>
 							<ListItemIcon>
 								<Settings />
@@ -55,7 +57,7 @@ export const ProfileMenu = () => {
 							<ListItemText>
 								Settings
 							</ListItemText>
-						</MenuItem>
+						</MenuItem>,
 						<MenuItem
 							onClick={() => {
 								closePfOp()
@@ -70,8 +72,8 @@ export const ProfileMenu = () => {
 							<ListItemText>
 								Logout
 							</ListItemText>
-						</MenuItem>
-					</>
+						</MenuItem>,
+					]
 				) : (
 					<MenuItem
 						onClick={async () => {
