@@ -47,6 +47,7 @@ export const ProfileMenu = () => {
 							closePfOp()
 
 							logout()
+							setUser(null)
 						}}
 					>
 						<ListItemIcon>
