@@ -1,12 +1,4 @@
-import {
-	ThumbUp,
-	ThumbDown,
-	ThumbUpOutlined,
-	ThumbDownOutlined,
-	ChatBubbleOutlineOutlined,
-	ShareOutlined,
-} from '@mui/icons-material'
-import { Avatar, Button, Stack } from '@mui/material'
+import { Avatar, Skeleton, Stack } from '@mui/material'
 import { RelativeTimestamp } from './RelativeTimestamp'
 import { VoteButton } from './VoteButton'
 import { CommentsButton } from './CommentsButton'
@@ -22,6 +14,7 @@ export interface PostPreviewProps {
 	downvotes?: number
 	commentsCount?: number
 	stretch?: boolean
+	skeleton?: boolean
 }
 
 export const PostPreview = ({
@@ -33,12 +26,23 @@ export const PostPreview = ({
 	upvotes,
 	downvotes,
 	commentsCount,
-	stretch,
+	skeleton,
 }: PostPreviewProps) => {
-	return (
-		<article
-			className={`font-sans rounded-xl hover:bg-[#f2f4f5] p-3 ${stretch ? 'w-full' : ''}`}
-		>
+	return skeleton ? (
+		<div className="flex flex-col">
+			<div className="flex">
+				<Skeleton variant="circular">
+					<Avatar />
+				</Skeleton>
+				<div>
+					<Skeleton />
+				</div>
+			</div>
+			<Skeleton className="mb-3 text-5xl w-4/5" />
+			<Skeleton variant="rounded" height="100px" />
+		</div>
+	) : (
+		<article className="font-sans rounded-xl hover:bg-[#f2f4f5] p-3">
 			<Stack
 				direction="row"
 				spacing={2}
