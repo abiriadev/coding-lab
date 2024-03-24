@@ -16,12 +16,12 @@ func init() {
 
 		admin := &models.Admin{}
 
-		if email := os.Getenv("INIT_ADMIN_EMAIL"); email != "" {
+		if email := os.Getenv("INIT_ADMIN_EMAIL"); email == "" {
 			return errors.New("environment variable INIT_ADMIN_EMAIL is required")
 		} else {
 			admin.Email = email
 		}
-		if password := os.Getenv("INIT_ADMIN_PASSWORD"); password != "" {
+		if password := os.Getenv("INIT_ADMIN_PASSWORD"); password == "" {
 			return errors.New("environment variable INIT_ADMIN_PASSWORD is required")
 		} else {
 			admin.SetPassword(password)
