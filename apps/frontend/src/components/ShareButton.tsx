@@ -13,7 +13,7 @@ export const ShareButton = ({ id }: ShareButtonProps) => (
 
 			try {
 				await navigator.clipboard.writeText(
-					`${import.meta.env.VITE_BASEURL}/posts/${id}`,
+					`${import.meta.env.VITE_BASE_URL}/posts/${id}`,
 				)
 			} catch {}
 		}}
