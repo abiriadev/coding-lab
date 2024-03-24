@@ -6,7 +6,9 @@ const pb = new PocketBase(
 ) as TypedPocketBase
 
 export const getPosts = async () => {
-	return await pb.collection('posts').getFullList()
+	return await pb.collection('posts').getFullList({
+		expand: 'author',
+	})
 }
 
 export const getPost = async (id: string) => {
