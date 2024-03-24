@@ -62,7 +62,7 @@ export const Post = ({
 			>
 				<VoteButton count={upvotes} />
 				<VoteButton count={downvotes} down />
-				<ShareButton />
+				<ShareButton id={id} />
 			</Stack>
 			<div className="flex items-center justify-between">
 				<span>{comments.length} comments</span>
