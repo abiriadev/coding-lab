@@ -34,7 +34,11 @@ export const PostInput = ({ onSubmit }: PostInputProps) => {
 				</Link>
 				<FlatButton
 					className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700"
-					onClick={() =>
+					onClick={() => {
+						alert(
+							'title and content should not be empty',
+						)
+
 						onSubmit?.({
 							title:
 								title.current?.value ?? '',
@@ -42,7 +46,7 @@ export const PostInput = ({ onSubmit }: PostInputProps) => {
 								content.current?.value ??
 								'',
 						})
-					}
+					}}
 				>
 					Submit
 				</FlatButton>
