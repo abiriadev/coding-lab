@@ -8,12 +8,7 @@ export const PostInput = () => {
 			<TextareaAutosize className="min-h-40 border-2 border-solid border-neutral-400 focus-within:border-neutral-800 rounded-xl p-3 text-lg" />
 			<div className="flex justify-end gap-2">
 				<FlatButton>Cancel</FlatButton>
-				<FlatButton
-					color="text-neutral-100"
-					bg="bg-neutral-800"
-					hover="bg-neutral-800"
-					active="bg-neutral-700"
-				>
+				<FlatButton className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700">
 					Submit
 				</FlatButton>
 			</div>
