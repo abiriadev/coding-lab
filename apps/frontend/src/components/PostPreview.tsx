@@ -31,13 +31,26 @@ export const PostPreview = ({
 	return skeleton ? (
 		<div className="flex flex-col">
 			<div className="flex gap-3">
-				<Skeleton variant="circular">
+				<Skeleton
+					variant="circular"
+					animation="wave"
+				>
 					<Avatar />
 				</Skeleton>
-				<Skeleton className="w-1/3" />
+				<Skeleton
+					className="w-1/3"
+					animation="wave"
+				/>
 			</div>
-			<Skeleton className="mb-3 text-5xl w-4/5" />
-			<Skeleton variant="rounded" height="100px" />
+			<Skeleton
+				className="mb-3 text-5xl w-4/5"
+				animation="wave"
+			/>
+			<Skeleton
+				variant="rounded"
+				height="100px"
+				animation="wave"
+			/>
 		</div>
 	) : (
 		<article className="font-sans rounded-xl hover:bg-[#f2f4f5] p-3">
