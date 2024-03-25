@@ -34,6 +34,20 @@ export const createPost = async ({
 	return id
 }
 
+export const createComment = async ({
+	postId,
+	content,
+}: {
+	postId: string
+	content: string
+}) => {
+	await pb.collection('comments').create({
+		ahthor: pb.authStore.model?.id,
+		post: postId,
+		content,
+	})
+}
+
 export const login = async () => {
 	await pb
 		.collection('users')
