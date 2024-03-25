@@ -14,7 +14,7 @@ export const getPosts = async () => {
 
 export const getPost = async (id: string) => {
 	return await pb.collection('posts').getOne(id, {
-		expand: 'author',
+		expand: 'author,comments_via_post',
 	})
 }
 
@@ -42,7 +42,7 @@ export const createComment = async ({
 	content: string
 }) => {
 	await pb.collection('comments').create({
-		ahthor: pb.authStore.model?.id,
+		author: pb.authStore.model?.id,
 		post: postId,
 		content,
 	})
