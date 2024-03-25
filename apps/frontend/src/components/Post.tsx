@@ -14,6 +14,7 @@ import { VoteButton } from './VoteButton'
 import { ShareButton } from './ShareButton'
 import { MoreOptions } from './MoreOptions'
 import { CommentInput } from './CommentInput'
+import { createComment } from '@/api'
 
 export interface PostProps {
 	id?: string
@@ -90,7 +91,15 @@ export const Post = ({
 					]}
 				/>
 			</div>
-			<CommentInput className="mb-3 mt-5" />
+			<CommentInput
+				className="mb-3 mt-5"
+				onSubmit={content =>
+					createComment({
+						postId: id ?? '',
+						content,
+					})
+				}
+			/>
 			<Stack gap={1} divider={<Divider />}>
 				{comments.map((comment, i) => (
 					<Comment key={i} content={comment} />
