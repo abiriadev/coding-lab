@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
+    "@tanstack/react-query": "^5.28.6",
     "date-fns": "^3.6.0",
     "model": "workspace:^",
     "pocketbase": "^0.21.1",
