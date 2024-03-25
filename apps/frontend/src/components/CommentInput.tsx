@@ -3,11 +3,13 @@ import { TextareaAutosize } from '@mui/material'
 import { FlatButton } from './FlatButton'
 
 export interface CommentInputProps {
+	onSubmit?: (value: string) => void
 	className?: string
 }
 
 export const CommentInput = ({
 	className,
+	onSubmit,
 }: CommentInputProps) => {
 	const [inputMode, setInputMode] = useState(false)
 	const ta = useRef<null | HTMLTextAreaElement>(null)
@@ -36,7 +38,17 @@ export const CommentInput = ({
 						>
 							Cancel
 						</FlatButton>
-						<FlatButton className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700">
+						<FlatButton
+							className="text-white bg-neutral-800 hover:bg-neutral-800 active:bg-neutral-700"
+							onClick={() => {
+								const v = ta.current?.value
+								if (!v) return
+
+								setInputMode(false)
+								ta.current!.value = ''
+								onSubmit?.(v)
+							}}
+						>
 							Submit
 						</FlatButton>
 					</div>
