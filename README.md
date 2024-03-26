@@ -40,3 +40,7 @@ Provide the following environment variables:
 | `APP_NAME`                    | `false`  | The name of the application                        |
 | `DISCORD_OAUTH_CLIENT_ID`     | `true`   | The client ID of the Discord OAuth application     |
 | `DISCORD_OAUTH_CLIENT_SECRET` | `true`   | The client secret of the Discord OAuth application |
+
+## License
+
+[![GitHub](https://img.shields.io/github/license/abiriadev/coding-lab?color=ffffff&style=for-the-badge)](./LICENSE)
